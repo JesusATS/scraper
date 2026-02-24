@@ -1,0 +1,13 @@
+2026-02-23 14:45:55,067 [INFO] ============================================================
+2026-02-23 14:45:55,067 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 14:45:55,067 [INFO]   Fecha: 2026-02-23 14:45:55
+2026-02-23 14:45:55,067 [INFO] ============================================================
+2026-02-23 14:45:55,068 [INFO] Usando driver: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/msedgedriver
+2026-02-23 14:45:57,383 [INFO] Navegando al portal IDSE...
+2026-02-23 14:46:11,195 [INFO] Modal/aviso cerrado (xpath: //button[contains(translate(text(),'CERR','cerr'),'cerrar')])
+2026-02-23 14:46:12,200 [INFO] Haciendo clic en 'Iniciar sesión'...
+2026-02-23 14:46:12,225 [INFO] Formulario enviado. Esperando respuesta...
+2026-02-23 14:46:21,308 [ERROR] Login fallido: la página de login sigue activa.
+2026-02-23 14:46:21,312 [INFO]   → HTML guardado en: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_login_fallido.html
+2026-02-23 14:46:21,312 [ERROR] No se pudo iniciar sesión. Revisa config.ini y debug/.
+2026-02-23 14:46:21,393 [INFO] Navegador cerrado.

@@ -1,0 +1,64 @@
+2026-02-23 15:40:26,260 [INFO] ============================================================
+2026-02-23 15:40:26,260 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 15:40:26,260 [INFO]   Fecha: 2026-02-23 15:40:26
+2026-02-23 15:40:26,260 [INFO]   Modo: EXPLORACION
+2026-02-23 15:40:26,260 [INFO] ============================================================
+2026-02-23 15:40:28,390 [INFO] Navegando al portal IDSE...
+2026-02-23 15:40:38,933 [INFO] Enviando certificado (.cer)...
+2026-02-23 15:40:40,480 [INFO] Enviando llave privada (.key)...
+2026-02-23 15:40:42,030 [INFO] Llenando usuario...
+2026-02-23 15:40:42,136 [INFO] Llenando contrasena...
+2026-02-23 15:40:42,165 [INFO] Esperando que el boton 'Iniciar sesion' se habilite...
+2026-02-23 15:40:42,170 [INFO] Boton habilitado.
+2026-02-23 15:40:42,170 [INFO] Haciendo clic en 'Iniciar sesion'...
+2026-02-23 15:40:42,177 [INFO] Esperando respuesta del servidor (max 30 seg)...
+2026-02-23 15:40:48,238 [INFO] Login exitoso.
+2026-02-23 15:40:48,243 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_portal_principal.html
+2026-02-23 15:40:48,244 [INFO] ============================================================
+2026-02-23 15:40:48,244 [INFO]   MODO EXPLORACION: revisando 11 modulos
+2026-02-23 15:40:48,244 [INFO] ============================================================
+2026-02-23 15:40:48,244 [INFO] Explorando: Movimientos Afiliatorios (irA=afiliacion)...
+2026-02-23 15:40:51,451 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_afiliacion.html
+2026-02-23 15:40:51,481 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:40:52,486 [INFO] Explorando: Emision (irA=emision)...
+2026-02-23 15:40:55,998 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_emision.html
+2026-02-23 15:40:56,017 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:40:57,022 [INFO] Explorando: Confronta (irA=confronta)...
+2026-02-23 15:41:00,559 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_confronta.html
+2026-02-23 15:41:00,577 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:01,580 [INFO] Explorando: DAPSUA (irA=dapsua)...
+2026-02-23 15:41:04,734 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_dapsua.html
+2026-02-23 15:41:04,753 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:05,754 [INFO] Explorando: PPE (irA=ppe)...
+2026-02-23 15:41:08,899 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_ppe.html
+2026-02-23 15:41:08,918 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:09,924 [INFO] Explorando: SATIC (irA=satic)...
+2026-02-23 15:41:13,069 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_satic.html
+2026-02-23 15:41:13,087 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:14,093 [INFO] Explorando: Dictamen (irA=dictamen)...
+2026-02-23 15:41:17,266 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_dictamen.html
+2026-02-23 15:41:17,282 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:18,287 [INFO] Explorando: RTT (irA=irRTT)...
+2026-02-23 15:41:21,449 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_irRTT.html
+2026-02-23 15:41:21,468 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:22,473 [INFO] Explorando: SIPRESS (irA=sipress)...
+2026-02-23 15:41:25,658 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_sipress.html
+2026-02-23 15:41:25,676 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:26,681 [INFO] Explorando: Incidencias (irA=incidencias)...
+2026-02-23 15:41:29,894 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_incidencias.html
+2026-02-23 15:41:29,912 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:30,918 [INFO] Explorando: Dictamen Oracle (irA=dictamenOracle)...
+2026-02-23 15:41:34,088 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/explorar_dictamenOracle.html
+2026-02-23 15:41:34,105 [INFO]   Sin keywords de incapacidades.
+2026-02-23 15:41:35,111 [INFO] Reporte guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/reporte_exploracion_20260223_154135.txt
+2026-02-23 15:41:35,111 [INFO] 
+2026-02-23 15:41:35,111 [INFO] Exploracion completada.
+2026-02-23 15:41:35,111 [INFO]   Reporte → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/reporte_exploracion_20260223_154135.txt
+2026-02-23 15:41:35,111 [INFO]   HTMLs   → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-23 15:41:35,111 [INFO] 
+2026-02-23 15:41:35,111 [INFO]   PROXIMOS PASOS:
+2026-02-23 15:41:35,111 [INFO]   1. Abre el reporte y encuentra el modulo de incapacidades
+2026-02-23 15:41:35,111 [INFO]   2. Cambia MODULO_INCAPACIDADES al inicio del script
+2026-02-23 15:41:35,111 [INFO]   3. Pon MODO_EXPLORACION = False
+2026-02-23 15:41:35,111 [INFO]   4. Vuelve a ejecutar
+2026-02-23 15:41:35,209 [INFO] Navegador cerrado.

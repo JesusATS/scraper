@@ -1,0 +1,86 @@
+2026-02-23 14:24:46,886 [INFO] ============================================================
+2026-02-23 14:24:46,886 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 14:24:46,886 [INFO] ============================================================
+2026-02-23 14:25:38,239 [ERROR] Error inesperado: Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 141
+Current browser version is 145.0.3800.70 with binary path /Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+0   msedgedriver                        0x0000000104f40d88 msedgedriver + 6335880
+1   msedgedriver                        0x0000000104f3883a msedgedriver + 6301754
+2   msedgedriver                        0x000000010499dd86 msedgedriver + 425350
+3   msedgedriver                        0x00000001049e3bda msedgedriver + 711642
+4   msedgedriver                        0x00000001049e2a24 msedgedriver + 707108
+5   msedgedriver                        0x00000001049dcd69 msedgedriver + 683369
+6   msedgedriver                        0x00000001049d8d3a msedgedriver + 666938
+7   msedgedriver                        0x0000000104a26eca msedgedriver + 986826
+8   msedgedriver                        0x0000000104a26556 msedgedriver + 984406
+9   msedgedriver                        0x0000000104a18d83 msedgedriver + 929155
+10  msedgedriver                        0x00000001049e65b8 msedgedriver + 722360
+11  msedgedriver                        0x00000001049e7551 msedgedriver + 726353
+12  msedgedriver                        0x0000000104ef8d10 msedgedriver + 6040848
+13  msedgedriver                        0x0000000104efda7f msedgedriver + 6060671
+14  msedgedriver                        0x0000000104ed2b62 msedgedriver + 5884770
+15  msedgedriver                        0x0000000104efe572 msedgedriver + 6063474
+16  msedgedriver                        0x0000000104ec1383 msedgedriver + 5813123
+17  msedgedriver                        0x0000000104f229a8 msedgedriver + 6212008
+18  msedgedriver                        0x0000000104f22b05 msedgedriver + 6212357
+19  msedgedriver                        0x0000000104f383b3 msedgedriver + 6300595
+20  libsystem_pthread.dylib             0x00007ff80913ae4d _pthread_start + 115
+21  libsystem_pthread.dylib             0x00007ff809136857 thread_start + 15
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 463, in main
+    driver = crear_driver(output_dir, ruta_driver)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 97, in crear_driver
+    driver = webdriver.Edge(service=service, options=options)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/edge/webdriver.py", line 45, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        browser_name=DesiredCapabilities.EDGE["browserName"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        keep_alive=keep_alive,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=self.options)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/common/webdriver.py", line 25, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 271, in __init__
+    self.start_session(capabilities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 366, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 446, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 141
+Current browser version is 145.0.3800.70 with binary path /Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+0   msedgedriver                        0x0000000104f40d88 msedgedriver + 6335880
+1   msedgedriver                        0x0000000104f3883a msedgedriver + 6301754
+2   msedgedriver                        0x000000010499dd86 msedgedriver + 425350
+3   msedgedriver                        0x00000001049e3bda msedgedriver + 711642
+4   msedgedriver                        0x00000001049e2a24 msedgedriver + 707108
+5   msedgedriver                        0x00000001049dcd69 msedgedriver + 683369
+6   msedgedriver                        0x00000001049d8d3a msedgedriver + 666938
+7   msedgedriver                        0x0000000104a26eca msedgedriver + 986826
+8   msedgedriver                        0x0000000104a26556 msedgedriver + 984406
+9   msedgedriver                        0x0000000104a18d83 msedgedriver + 929155
+10  msedgedriver                        0x00000001049e65b8 msedgedriver + 722360
+11  msedgedriver                        0x00000001049e7551 msedgedriver + 726353
+12  msedgedriver                        0x0000000104ef8d10 msedgedriver + 6040848
+13  msedgedriver                        0x0000000104efda7f msedgedriver + 6060671
+14  msedgedriver                        0x0000000104ed2b62 msedgedriver + 5884770
+15  msedgedriver                        0x0000000104efe572 msedgedriver + 6063474
+16  msedgedriver                        0x0000000104ec1383 msedgedriver + 5813123
+17  msedgedriver                        0x0000000104f229a8 msedgedriver + 6212008
+18  msedgedriver                        0x0000000104f22b05 msedgedriver + 6212357
+19  msedgedriver                        0x0000000104f383b3 msedgedriver + 6300595
+20  libsystem_pthread.dylib             0x00007ff80913ae4d _pthread_start + 115
+21  libsystem_pthread.dylib             0x00007ff809136857 thread_start + 15
+

@@ -1,0 +1,57 @@
+2026-02-23 14:53:21,874 [INFO] ============================================================
+2026-02-23 14:53:21,874 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 14:53:21,874 [INFO]   Fecha: 2026-02-23 14:53:21
+2026-02-23 14:53:21,874 [INFO] ============================================================
+2026-02-23 14:53:21,875 [INFO] Usando driver: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/msedgedriver
+2026-02-23 14:53:24,283 [INFO] Navegando al portal IDSE...
+2026-02-23 14:53:38,143 [INFO] Modal/aviso cerrado (xpath: //button[contains(translate(text(),'CERR','cerr'),'cerrar')])
+2026-02-23 14:53:39,146 [INFO] Haciendo clic en 'Iniciar sesión'...
+2026-02-23 14:53:39,171 [INFO] Formulario enviado. Esperando respuesta...
+2026-02-23 14:53:48,230 [INFO] ✔ Login exitoso.
+2026-02-23 14:53:48,231 [INFO] ──────────────────────────────────────────────────
+2026-02-23 14:53:48,231 [INFO] EXPLORANDO MENÚ DEL PORTAL...
+2026-02-23 14:53:48,231 [INFO] ──────────────────────────────────────────────────
+2026-02-23 14:53:48,237 [INFO]   → HTML guardado en: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_portal_principal.html
+2026-02-23 14:53:48,389 [INFO] Se encontraron 27 enlaces en el portal:
+2026-02-23 14:53:48,389 [INFO]   [01] Trámites                                      → https://www.gob.mx/tramites
+2026-02-23 14:53:48,389 [INFO]   [02] Gobierno                                      → https://www.gob.mx/gobierno
+2026-02-23 14:53:48,389 [INFO]   [03] Búsqueda                                      → https://www.gob.mx/busqueda
+2026-02-23 14:53:48,389 [INFO]   [04] Inicio                                        → https://idse.imss.gob.mx/imss/
+2026-02-23 14:53:48,389 [INFO]   [05] Movimientos Afiliatorios                      → javascript:irA(1);
+2026-02-23 14:53:48,389 [INFO]   [06] Emisión                                       → javascript:irA(2);
+2026-02-23 14:53:48,389 [INFO]   [07] Confronta                                     → javascript:irA(3);
+2026-02-23 14:53:48,389 [INFO]   [08] DAPSUA                                        → javascript:irA(4);
+2026-02-23 14:53:48,389 [INFO]   [09] SATIC                                         → javascript:irA(5);
+2026-02-23 14:53:48,389 [INFO]   [10] Dictamen por Internet                         → javascript:irA(6);
+2026-02-23 14:53:48,389 [INFO]   [11] Riesgos de Trabajo Terminados                 → javascript:irA(8);
+2026-02-23 14:53:48,389 [INFO]   [12] Contratos                                     → javascript:irA(101);
+2026-02-23 14:53:48,389 [INFO]   [13] Incidencias                                   → javascript:irA(102);
+2026-02-23 14:53:48,389 [INFO]   [14] Participa                                     → https://participa.gob.mx/
+2026-02-23 14:53:48,389 [INFO]   [15] Marco Jurídico                                → http://www.ordenjuridico.gob.mx/
+2026-02-23 14:53:48,389 [INFO]   [16] Plataforma Nacional de Transparencia          → https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/co
+2026-02-23 14:53:48,389 [INFO]   [17] Transparencia para el pueblo                  → https://transparencia.gob.mx/
+2026-02-23 14:53:48,389 [INFO]   [18] Alerta                                        → https://alertadores.funcionpublica.gob.mx/
+2026-02-23 14:53:48,389 [INFO]   [19] Leer más                                      → https://www.gob.mx/que-es-gobmx
+2026-02-23 14:53:48,389 [INFO]   [20] Portal de datos abiertos                      → https://datos.gob.mx/
+2026-02-23 14:53:48,389 [INFO]   [21] Declaración de accesibilidad                  → https://www.gob.mx/accesibilidad
+2026-02-23 14:53:48,389 [INFO]   [22] Términos y Condiciones                        → https://www.gob.mx/terminos
+2026-02-23 14:53:48,389 [INFO]   [23] Denuncia contra servidores públicos           → https://sidec.buengobierno.gob.mx/#!/
+2026-02-23 14:53:48,389 [INFO]   [24] enlace a facebook abre en una nueva ventana   → https://www.facebook.com/gobmexico
+2026-02-23 14:53:48,389 [INFO]   [25] Enlace a twitter abre en una nueva ventana    → https://twitter.com/GobiernoMX
+2026-02-23 14:53:48,389 [INFO]   [26] Enlace a instagram abre en una nueva ventana  → https://www.instagram.com/gobmexico/
+2026-02-23 14:53:48,389 [INFO]   [27] Enlace a youtube abre en una nueva ventana    → https://www.youtube.com/@gobiernodemexico
+2026-02-23 14:53:48,389 [INFO] ──────────────────────────────────────────────────
+2026-02-23 14:53:48,389 [INFO] Buscando sección de incapacidades en el menú...
+2026-02-23 14:53:48,389 [WARNING] No se encontró ningún enlace relacionado con 'incapacidades' en el menú.
+2026-02-23 14:53:48,389 [WARNING] Revisa el archivo debug/debug_portal_principal.html para encontrar el nombre correcto.
+2026-02-23 14:53:48,390 [WARNING] Luego agrega la palabra clave en KEYWORDS_INCAPACIDAD al inicio del script.
+2026-02-23 14:53:48,390 [ERROR] 
+  ╔══════════════════════════════════════════════════════╗
+  ║  ACCIÓN REQUERIDA: Menú de incapacidades no hallado  ║
+  ╠══════════════════════════════════════════════════════╣
+  ║  1. Abre: debug/debug_portal_principal.html          ║
+  ║  2. Busca el nombre exacto del menú de incapacidades ║
+  ║  3. Agrega esa palabra a KEYWORDS_INCAPACIDAD        ║
+  ║     al inicio del script y vuelve a ejecutar         ║
+  ╚══════════════════════════════════════════════════════╝
+2026-02-23 14:53:48,474 [INFO] Navegador cerrado.

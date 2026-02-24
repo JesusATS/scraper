@@ -1,0 +1,77 @@
+2026-02-23 14:43:09,473 [INFO] ============================================================
+2026-02-23 14:43:09,473 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 14:43:09,473 [INFO] ============================================================
+2026-02-23 14:43:12,969 [INFO] Navegando al portal IDSE: https://idse.imss.gob.mx/imss/
+2026-02-23 14:43:14,101 [INFO] Llenando campo 'certificado'...
+2026-02-23 14:43:16,141 [INFO] Llenando campo 'llave'...
+2026-02-23 14:43:18,192 [INFO] Llenando campo 'usuario'...
+2026-02-23 14:43:18,298 [INFO] Llenando campo 'contraseña'...
+2026-02-23 14:43:18,330 [INFO] Haciendo clic en 'Iniciar sesión'...
+2026-02-23 14:43:19,410 [ERROR] Error inesperado: Message: element click intercepted: Element <button class="btn btn-primary pull-right" type="button" id="botonFirma" name="botonFirma" onclick="javascript:SignNoApplet();">...</button> is not clickable at point (1052, 624). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: MicrosoftEdge=145.0.3800.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+0   msedgedriver                        0x00000001052e7c80 msedgedriver + 6028416
+1   msedgedriver                        0x00000001052df6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000104d7531c msedgedriver + 316188
+3   msedgedriver                        0x0000000104dc6da4 msedgedriver + 650660
+4   msedgedriver                        0x0000000104dc5324 msedgedriver + 643876
+5   msedgedriver                        0x0000000104dc31e0 msedgedriver + 635360
+6   msedgedriver                        0x0000000104dc2580 msedgedriver + 632192
+7   msedgedriver                        0x0000000104db7340 msedgedriver + 586560
+8   msedgedriver                        0x0000000104db6db4 msedgedriver + 585140
+9   msedgedriver                        0x0000000104dffd30 msedgedriver + 884016
+10  msedgedriver                        0x0000000104db55a0 msedgedriver + 578976
+11  msedgedriver                        0x00000001052a248c msedgedriver + 5743756
+12  msedgedriver                        0x00000001052a6524 msedgedriver + 5760292
+13  msedgedriver                        0x0000000105285dec msedgedriver + 5627372
+14  msedgedriver                        0x00000001052a6d84 msedgedriver + 5762436
+15  msedgedriver                        0x0000000105276e34 msedgedriver + 5566004
+16  msedgedriver                        0x00000001052cc878 msedgedriver + 5916792
+17  msedgedriver                        0x00000001052cc99c msedgedriver + 5917084
+18  msedgedriver                        0x00000001052df2fc msedgedriver + 5993212
+19  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 466, in main
+    if not iniciar_sesion(driver, config):
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 187, in iniciar_sesion
+    btn.click()
+    ~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webelement.py", line 114, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webelement.py", line 508, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 446, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button class="btn btn-primary pull-right" type="button" id="botonFirma" name="botonFirma" onclick="javascript:SignNoApplet();">...</button> is not clickable at point (1052, 624). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: MicrosoftEdge=145.0.3800.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+0   msedgedriver                        0x00000001052e7c80 msedgedriver + 6028416
+1   msedgedriver                        0x00000001052df6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000104d7531c msedgedriver + 316188
+3   msedgedriver                        0x0000000104dc6da4 msedgedriver + 650660
+4   msedgedriver                        0x0000000104dc5324 msedgedriver + 643876
+5   msedgedriver                        0x0000000104dc31e0 msedgedriver + 635360
+6   msedgedriver                        0x0000000104dc2580 msedgedriver + 632192
+7   msedgedriver                        0x0000000104db7340 msedgedriver + 586560
+8   msedgedriver                        0x0000000104db6db4 msedgedriver + 585140
+9   msedgedriver                        0x0000000104dffd30 msedgedriver + 884016
+10  msedgedriver                        0x0000000104db55a0 msedgedriver + 578976
+11  msedgedriver                        0x00000001052a248c msedgedriver + 5743756
+12  msedgedriver                        0x00000001052a6524 msedgedriver + 5760292
+13  msedgedriver                        0x0000000105285dec msedgedriver + 5627372
+14  msedgedriver                        0x00000001052a6d84 msedgedriver + 5762436
+15  msedgedriver                        0x0000000105276e34 msedgedriver + 5566004
+16  msedgedriver                        0x00000001052cc878 msedgedriver + 5916792
+17  msedgedriver                        0x00000001052cc99c msedgedriver + 5917084
+18  msedgedriver                        0x00000001052df2fc msedgedriver + 5993212
+19  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-23 14:43:19,503 [INFO] Navegador cerrado.

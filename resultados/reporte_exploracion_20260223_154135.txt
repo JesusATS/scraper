@@ -1,0 +1,82 @@
+REPORTE DE EXPLORACION — PORTAL IDSE
+Fecha: 2026-02-23 15:40:48
+============================================================
+
+Keywords buscadas: incapacidad, incap, ST-, dias, baja, subsidio, medica
+
+============================================================
+
+MODULO: Movimientos Afiliatorios (irA=afiliacion)
+  HTML: debug/explorar_afiliacion.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Menú IDSE Movimientos Afiliatorios Movimientos Afiliatorios Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #02002: Éste módulo no está disponible actualmente, por favor, intente más tarde. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibili
+  --------------------------------------------------------
+
+MODULO: Emision (irA=emision)
+  HTML: debug/explorar_emision.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: Confronta (irA=confronta)
+  HTML: debug/explorar_confronta.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: DAPSUA (irA=dapsua)
+  HTML: debug/explorar_dapsua.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: PPE (irA=ppe)
+  HTML: debug/explorar_ppe.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: SATIC (irA=satic)
+  HTML: debug/explorar_satic.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: Dictamen (irA=dictamen)
+  HTML: debug/explorar_dictamen.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: RTT (irA=irRTT)
+  HTML: debug/explorar_irRTT.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: SIPRESS (irA=sipress)
+  HTML: debug/explorar_sipress.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: Incidencias (irA=incidencias)
+  HTML: debug/explorar_incidencias.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+MODULO: Dictamen Oracle (irA=dictamenOracle)
+  HTML: debug/explorar_dictamenOracle.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Trámites Gobierno Búsqueda Inicio Mensaje de acceso a IDSE Fecha: 23 de Febrero de 2026 Ha ocurrido un mensaje con código #01001: Su sesión es inválida, por favor ingrese de nuevo al sistema. Regresar Enlaces Participa Marco Jurídico Plataforma Nacional de Transparencia Transparencia para el pueblo Alerta ¿Qué es gob.mx? Es el portal único de trámites, información y participación ciudadana. Leer más Portal de datos abiertos Declaración de accesibilidad Términos y Condiciones Denuncia contra serv
+  --------------------------------------------------------
+
+============================================================
+PROXIMOS PASOS:
+1. Identifica el modulo con keywords relevantes
+2. Abre su .html en debug/ para confirmar visualmente
+3. Cambia MODULO_INCAPACIDADES al valor irA correcto
+4. Pon MODO_EXPLORACION = False
+5. Ejecuta el script de nuevo
+============================================================

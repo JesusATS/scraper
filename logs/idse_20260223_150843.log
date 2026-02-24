@@ -1,0 +1,67 @@
+2026-02-23 15:08:43,914 [INFO] ============================================================
+2026-02-23 15:08:43,914 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 15:08:43,914 [INFO]   Fecha: 2026-02-23 15:08:43
+2026-02-23 15:08:43,914 [INFO]   Modo: EXTRACCION
+2026-02-23 15:08:43,914 [INFO] ============================================================
+2026-02-23 15:08:46,259 [INFO] Navegando al portal IDSE...
+2026-02-23 15:08:56,777 [INFO] Enviando certificado (.cer)...
+2026-02-23 15:08:56,792 [ERROR] Error inesperado: Message: element not interactable: Failed to set the 'value' property on 'HTMLInputElement': This input element accepts a filename, which may only be programmatically set to the empty string.
+  (Session info: MicrosoftEdge=145.0.3800.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+0   msedgedriver                        0x0000000100f77c80 msedgedriver + 6028416
+1   msedgedriver                        0x0000000100f6f6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000100a0531c msedgedriver + 316188
+3   msedgedriver                        0x0000000100a0af1c msedgedriver + 339740
+4   msedgedriver                        0x0000000100a0d770 msedgedriver + 350064
+5   msedgedriver                        0x0000000100a90a0c msedgedriver + 887308
+6   msedgedriver                        0x0000000100a8fd30 msedgedriver + 884016
+7   msedgedriver                        0x0000000100a455a0 msedgedriver + 578976
+8   msedgedriver                        0x0000000100f3248c msedgedriver + 5743756
+9   msedgedriver                        0x0000000100f36524 msedgedriver + 5760292
+10  msedgedriver                        0x0000000100f15dec msedgedriver + 5627372
+11  msedgedriver                        0x0000000100f36d84 msedgedriver + 5762436
+12  msedgedriver                        0x0000000100f06e34 msedgedriver + 5566004
+13  msedgedriver                        0x0000000100f5c878 msedgedriver + 5916792
+14  msedgedriver                        0x0000000100f5c99c msedgedriver + 5917084
+15  msedgedriver                        0x0000000100f6f2fc msedgedriver + 5993212
+16  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 527, in main
+    if not iniciar_sesion(driver, config):
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 196, in iniciar_sesion
+    driver.execute_script("arguments[0].value = arguments[1];", campo, creds["RUTA_CER"])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 532, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/webdriver.py", line 446, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable: Failed to set the 'value' property on 'HTMLInputElement': This input element accepts a filename, which may only be programmatically set to the empty string.
+  (Session info: MicrosoftEdge=145.0.3800.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+0   msedgedriver                        0x0000000100f77c80 msedgedriver + 6028416
+1   msedgedriver                        0x0000000100f6f6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000100a0531c msedgedriver + 316188
+3   msedgedriver                        0x0000000100a0af1c msedgedriver + 339740
+4   msedgedriver                        0x0000000100a0d770 msedgedriver + 350064
+5   msedgedriver                        0x0000000100a90a0c msedgedriver + 887308
+6   msedgedriver                        0x0000000100a8fd30 msedgedriver + 884016
+7   msedgedriver                        0x0000000100a455a0 msedgedriver + 578976
+8   msedgedriver                        0x0000000100f3248c msedgedriver + 5743756
+9   msedgedriver                        0x0000000100f36524 msedgedriver + 5760292
+10  msedgedriver                        0x0000000100f15dec msedgedriver + 5627372
+11  msedgedriver                        0x0000000100f36d84 msedgedriver + 5762436
+12  msedgedriver                        0x0000000100f06e34 msedgedriver + 5566004
+13  msedgedriver                        0x0000000100f5c878 msedgedriver + 5916792
+14  msedgedriver                        0x0000000100f5c99c msedgedriver + 5917084
+15  msedgedriver                        0x0000000100f6f2fc msedgedriver + 5993212
+16  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-23 15:08:56,800 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_error_20260223_150843.html
+2026-02-23 15:08:56,915 [INFO] Navegador cerrado.

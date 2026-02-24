@@ -1,0 +1,109 @@
+2026-02-23 14:30:39,964 [INFO] ============================================================
+2026-02-23 14:30:39,964 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-23 14:30:39,964 [INFO]   Fecha: 2026-02-23 14:30:39
+2026-02-23 14:30:39,964 [INFO] ============================================================
+2026-02-23 14:30:39,964 [INFO] Descargando/verificando EdgeDriver compatible con tu Edge instalado...
+2026-02-23 14:30:39,964 [INFO] ====== WebDriver manager ======
+2026-02-23 14:30:40,310 [INFO] Get LATEST edgedriver version for Edge 145.0.3800
+2026-02-23 14:30:40,356 [ERROR] Error inesperado: Could not reach host. Are you offline?
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='msedgedriver.azureedge.net', port=443): Failed to resolve 'msedgedriver.azureedge.net' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='msedgedriver.azureedge.net', port=443): Max retries exceeded with url: /LATEST_RELEASE_145_MACOS (Caused by NameResolutionError("HTTPSConnection(host='msedgedriver.azureedge.net', port=443): Failed to resolve 'msedgedriver.azureedge.net' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/http.py", line 32, in get
+    resp = requests.get(
+        url=url, verify=self._ssl_verify, stream=True, **kwargs)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='msedgedriver.azureedge.net', port=443): Max retries exceeded with url: /LATEST_RELEASE_145_MACOS (Caused by NameResolutionError("HTTPSConnection(host='msedgedriver.azureedge.net', port=443): Failed to resolve 'msedgedriver.azureedge.net' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 498, in main
+    driver = crear_driver()
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/scraper/idse_incapacidades.py", line 115, in crear_driver
+    service = EdgeService(EdgeChromiumDriverManager().install())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/microsoft.py", line 73, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/manager.py", line 35, in _get_driver_binary_path
+    binary_path = self._cache_manager.find_driver(driver)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/driver_cache.py", line 107, in find_driver
+    driver_version = self.get_cache_key_driver_version(driver)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/driver_cache.py", line 154, in get_cache_key_driver_version
+    return driver.get_driver_version_to_download()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/driver.py", line 48, in get_driver_version_to_download
+    return self.get_latest_release_version()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/drivers/edge.py", line 51, in get_latest_release_version
+    resp = self._http_client.get(url=latest_release_url)
+  File "/Users/jesusgallegosontiveros/Documents/Proyectos/idse_scraper/.venv/lib/python3.14/site-packages/webdriver_manager/core/http.py", line 35, in get
+    raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
+requests.exceptions.ConnectionError: Could not reach host. Are you offline?
