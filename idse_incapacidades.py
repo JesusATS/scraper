@@ -418,14 +418,24 @@ def navegar_a_modulo(driver):
 
 
 def _sesion_valida(driver):
-    """Verifica que la página actual no sea un error de sesión."""
+    """Verifica que la página actual no sea un error de sesión o de sistema del IMSS."""
     src = driver.page_source
-    if "#01001" in src or "sesi" in src.lower() and "inv" in src.lower():
-        log.error("Sesion invalida detectada.")
+    
+    # 1. Detectar el Error 1200 del IMSS
+    if "código 1200" in src or "Error en el proceso" in src:
+        log.error("El IMSS arrojó el Error 1200 (Módulo no aplicable o sin acceso para este patrón).")
         return False
+        
+    # 2. Detectar sesión inválida
+    if "#01001" in src or "sesi" in src.lower() and "inv" in src.lower():
+        log.error("Sesión inválida detectada.")
+        return False
+        
+    # 3. Detectar si nos pateó al login
     if "botonFirma" in src or "idUsuario" in src:
         log.error("Redirigido al login.")
         return False
+        
     return True
 
 

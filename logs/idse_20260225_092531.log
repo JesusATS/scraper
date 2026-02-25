@@ -1,0 +1,45 @@
+2026-02-25 09:25:31,245 [INFO] ============================================================
+2026-02-25 09:25:31,245 [INFO]   IDSE IMSS — Scraper de Incapacidades
+2026-02-25 09:25:31,245 [INFO]   Fecha: 2026-02-25 09:25:31
+2026-02-25 09:25:31,245 [INFO]   Modo: EXTRACCION
+2026-02-25 09:25:31,245 [INFO] ============================================================
+2026-02-25 09:25:32,729 [INFO] Navegando al portal IDSE...
+2026-02-25 09:25:43,149 [INFO] Enviando certificado (.cer)...
+2026-02-25 09:25:44,691 [INFO] Enviando llave privada (.key)...
+2026-02-25 09:25:46,225 [INFO] Llenando usuario...
+2026-02-25 09:25:46,324 [INFO] Llenando contrasena...
+2026-02-25 09:25:46,360 [INFO] Esperando que el boton 'Iniciar sesion' se habilite...
+2026-02-25 09:25:46,365 [INFO] Boton habilitado.
+2026-02-25 09:25:46,365 [INFO] Haciendo clic en 'Iniciar sesion'...
+2026-02-25 09:25:46,371 [INFO] Esperando respuesta del servidor (max 30 seg)...
+2026-02-25 09:25:52,430 [INFO] Login exitoso.
+2026-02-25 09:25:52,435 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_portal_principal.html
+2026-02-25 09:25:52,435 [INFO] Navegando al modulo 'incidencias' (irA=102)...
+2026-02-25 09:25:52,858 [INFO] Clic en enlace irA(102) realizado.
+2026-02-25 09:25:57,365 [ERROR] El IMSS arrojó el Error 1200 (Módulo no aplicable o sin acceso para este patrón).
+2026-02-25 09:25:57,368 [ERROR] Error via frmDatos: Message: javascript error: frmDatos no encontrado
+  (Session info: MicrosoftEdge=145.0.3800.70)
+Stacktrace:
+0   msedgedriver                        0x0000000104cdfc80 msedgedriver + 6028416
+1   msedgedriver                        0x0000000104cd76f8 msedgedriver + 5994232
+2   msedgedriver                        0x000000010476d31c msedgedriver + 316188
+3   msedgedriver                        0x0000000104772f1c msedgedriver + 339740
+4   msedgedriver                        0x0000000104775770 msedgedriver + 350064
+5   msedgedriver                        0x00000001047f8a0c msedgedriver + 887308
+6   msedgedriver                        0x00000001047f7d30 msedgedriver + 884016
+7   msedgedriver                        0x00000001047ad5a0 msedgedriver + 578976
+8   msedgedriver                        0x0000000104c9a48c msedgedriver + 5743756
+9   msedgedriver                        0x0000000104c9e524 msedgedriver + 5760292
+10  msedgedriver                        0x0000000104c7ddec msedgedriver + 5627372
+11  msedgedriver                        0x0000000104c9ed84 msedgedriver + 5762436
+12  msedgedriver                        0x0000000104c6ee34 msedgedriver + 5566004
+13  msedgedriver                        0x0000000104cc4878 msedgedriver + 5916792
+14  msedgedriver                        0x0000000104cc499c msedgedriver + 5917084
+15  msedgedriver                        0x0000000104cd72fc msedgedriver + 5993212
+16  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-25 09:25:57,371 [INFO]   HTML guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug/debug_modulo_error.html
+2026-02-25 09:25:57,371 [ERROR] No se pudo navegar al modulo 'incidencias'.
+2026-02-25 09:25:57,371 [ERROR] No se pudo acceder al modulo. Revisa MODULO_INCAPACIDADES.
+2026-02-25 09:25:57,450 [INFO] Navegador cerrado.

@@ -1,0 +1,27 @@
+2026-02-25 09:34:50,349 [INFO] ============================================================
+2026-02-25 09:34:50,349 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-25 09:34:50,349 [INFO] ============================================================
+2026-02-25 09:34:51,777 [INFO] Navegando al Escritorio Virtual...
+2026-02-25 09:34:54,985 [INFO] Esperando a que carguen los iframes de la página...
+2026-02-25 09:35:15,411 [ERROR] Error durante el login: Message: 
+Stacktrace:
+0   msedgedriver                        0x0000000102fdfc80 msedgedriver + 6028416
+1   msedgedriver                        0x0000000102fd76f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000102a6d31c msedgedriver + 316188
+3   msedgedriver                        0x0000000102ab928c msedgedriver + 627340
+4   msedgedriver                        0x0000000102af7d30 msedgedriver + 884016
+5   msedgedriver                        0x0000000102aad5a0 msedgedriver + 578976
+6   msedgedriver                        0x0000000102f9a48c msedgedriver + 5743756
+7   msedgedriver                        0x0000000102f9e524 msedgedriver + 5760292
+8   msedgedriver                        0x0000000102f7ddec msedgedriver + 5627372
+9   msedgedriver                        0x0000000102f9ed84 msedgedriver + 5762436
+10  msedgedriver                        0x0000000102f6ee34 msedgedriver + 5566004
+11  msedgedriver                        0x0000000102fc4878 msedgedriver + 5916792
+12  msedgedriver                        0x0000000102fc499c msedgedriver + 5917084
+13  msedgedriver                        0x0000000102fd72fc msedgedriver + 5993212
+14  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-25 09:35:15,418 [INFO] HTML guardado en debug: debug_error_login_ev.html
+2026-02-25 09:35:15,418 [ERROR] Login fallido. Revisa la carpeta 'debug' para ver en dónde se atascó.
+2026-02-25 09:35:15,513 [INFO] Navegador cerrado.

@@ -1,0 +1,29 @@
+2026-02-25 09:31:32,002 [INFO] ============================================================
+2026-02-25 09:31:32,002 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-25 09:31:32,002 [INFO] ============================================================
+2026-02-25 09:31:33,139 [INFO] Navegando al Escritorio Virtual...
+2026-02-25 09:31:36,132 [INFO] Buscando el formulario de login (iframe)...
+2026-02-25 09:31:36,151 [INFO] Dentro del iframe de login.
+2026-02-25 09:31:36,151 [INFO] Ingresando RFC...
+2026-02-25 09:31:56,591 [ERROR] Error durante el login: Message: 
+Stacktrace:
+0   msedgedriver                        0x00000001011e7c80 msedgedriver + 6028416
+1   msedgedriver                        0x00000001011df6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000100c7531c msedgedriver + 316188
+3   msedgedriver                        0x0000000100cc128c msedgedriver + 627340
+4   msedgedriver                        0x0000000100cffd30 msedgedriver + 884016
+5   msedgedriver                        0x0000000100cb55a0 msedgedriver + 578976
+6   msedgedriver                        0x00000001011a248c msedgedriver + 5743756
+7   msedgedriver                        0x00000001011a6524 msedgedriver + 5760292
+8   msedgedriver                        0x0000000101185dec msedgedriver + 5627372
+9   msedgedriver                        0x00000001011a6d84 msedgedriver + 5762436
+10  msedgedriver                        0x0000000101176e34 msedgedriver + 5566004
+11  msedgedriver                        0x00000001011cc878 msedgedriver + 5916792
+12  msedgedriver                        0x00000001011cc99c msedgedriver + 5917084
+13  msedgedriver                        0x00000001011df2fc msedgedriver + 5993212
+14  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-25 09:31:56,594 [INFO] HTML guardado en debug: debug_error_login_ev.html
+2026-02-25 09:31:56,594 [ERROR] Login fallido. Revisa la carpeta 'debug' para ver en dónde se atascó.
+2026-02-25 09:31:56,678 [INFO] Navegador cerrado.

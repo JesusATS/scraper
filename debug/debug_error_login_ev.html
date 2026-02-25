@@ -1,0 +1,360 @@
+<html lang="es" class="js svg wf-opensans-n4-active wf-opensans-n3-active wf-opensans-n7-active wf-opensans-n6-active wf-opensans-i3-active wf-opensans-i4-active wf-active"><head>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="max-age=100, must-revalidate">
+<meta name="description" content="Instituto Mexicano del Seguro Social Portal DELTA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> Portal de servicios IMSS digital </title>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="icon" href="/delta/resources/iconos/favicon.ico">
+
+
+
+<!-- Bootstrap -->
+<link type="text/css" href="/delta/resources/estilos/bootstrap/DT_bootstrap.css" rel="stylesheet">
+
+<!-- Jquery-->
+<link type="text/css" href="/delta/resources/estilos/jquery/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link type="text/css" href="/delta/resources/estilos/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<!-- JGrowl -->
+<link type="text/css" href="/delta/resources/estilos/jquery/jquery.jgrowl.css" rel="stylesheet">
+
+<!-- Jqplot -->
+<link type="text/css" href="/delta/resources/estilos/jquery/jquery.jqplot.min.css" rel="stylesheet">
+<link type="text/css" href="/delta/resources/estilos/jquery/morris.css" rel="stylesheet">
+
+<!-- IMSS -->
+<link type="text/css" href="/delta/resources/estilos/imss/portal.css" rel="stylesheet">
+<!--[if IE]> <link href="/delta/resources/estilos/imss/ie.css" type="text/css" rel="stylesheet" /><![endif]-->
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://framework-gb.cdn.gob.mx/assets/scripts/plugins.js"></script><script src="https://framework-gb.cdn.gob.mx/assets/scripts/main.js"></script><script type="text/javascript" src="/delta/resources/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/dtable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/dtable/jquery.dataTables.pagination.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/dtable/jquery.dataTables.sort.date.plugin.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/jquery-post-json.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/form2Object/form2object.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/form2Object/jquery.toObject.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/jquery.alphanum.js"></script>
+
+<!-- Bootstrap -->
+
+<script type="text/javascript" src="/delta/resources/js/bootstrap/DT_bootstrap.js"></script>
+<script type="text/javascript" src="/delta/resources/js/bootstrap/bootstrap-tooltip.js"></script>
+
+
+<!-- jQuery UI -->
+<script type="text/javascript" src="/delta/resources/js/jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/jquery.ui.datepicker-es.js"></script>
+
+<!-- JSON -->
+<script type="text/javascript" src="/delta/resources/js/json/json2.js"></script>
+<script type="text/javascript" src="/delta/resources/js/json/json.min.js"></script>
+
+<!-- Cometd -->
+<script type="text/javascript" src="/delta/resources/js/org/cometd.js"></script>
+<script type="text/javascript" src="/delta/resources/js/org/cometd/AckExtension.js"></script>
+<script type="text/javascript" src="/delta/resources/js/org/cometd/ReloadExtension.js"></script>
+<script type="text/javascript" src="/delta/resources/js/org/cometd/TimeStampExtension.js"></script>
+<script type="text/javascript" src="/delta/resources/js/org/cometd/TimeSyncExtension.js"></script>
+
+<!-- Cometd and Jquery-->
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cookie.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cometd.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cometd-ack.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cometd-reload.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cometd-timestamp.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.cometd-timesync.js"></script>
+
+<!-- JGrowl -->
+<script type="text/javascript" src="/delta/resources/js/jquery/comet/jquery.jgrowl.js"></script>
+
+<!-- JQPlot -->
+<script type="text/javascript" src="/delta/resources/js/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="/delta/resources/js/jqplot/jqplot.pieRenderer.js"></script>
+<script type="text/javascript" src="/delta/resources/js/morris/morris.js"></script>
+<script type="text/javascript" src="/delta/resources/js/morris/raphael.min.js"></script>
+
+<!-- Generales DELTA -->
+<script type="text/javascript" src=" /portal-web/static/resources/js/delta/general.js;JSESSIONIDPORTAL=lCgIU87ONj1Gh1ncbnZCtegKTLnIZyu4EHwE8f4uNvxKY6ayrQMd!-388029384"></script>
+<script type="text/javascript" src="/delta/resources/js/delta/CometConector.js"></script>
+<script type="text/javascript" src="/delta/resources/js/delta/gestionCtrlSelect.js"></script>
+<script type="text/javascript" src="/delta/resources/js/delta/procesaErrores.js"></script>
+<script type="text/javascript" src="/delta/resources/js/delta/limpiaFormularios.js"></script>
+
+<!-- html5 enabled -->
+<script type="text/javascript" src="/delta/resources/js/delta/html5.js"></script>
+
+<!-- Scripts de "Procesando..." -->
+<script type="text/javascript" src="/delta/resources/js/jquery/blockUI/jquery.blockUI.js"></script>
+
+<script>
+	var context_path = '/portal-web';
+	var server_scheme = 'http';
+	var server_port = '80';
+	var server_name = 'serviciosdigitales.imss.gob.mx';	
+
+	$(document).ready(function(){
+		$('form:not(.formNotBlock)').submit(function(){
+			$.blockUI();
+		});	
+		
+		if(server_port != '80') {
+			server_name = server_scheme + '://' + server_name + ':' + server_port + '/';
+		} else {
+			server_name = server_scheme + '://' + server_name + '/';
+		}		
+		$('iframe').attr("frameBorder", "0");
+	});
+</script>
+
+<style>
+    .u1st .accessibilityClass {
+        position: fixed !important;
+        top: 55px;
+        left: -50px;
+        transform: rotate(90deg);
+        _position: absolute !important;
+       _top: expression(document.compatMode && document.compatMode = 'CSS1Compat' ? documentElement.scrollTop : document.body.scrollTop);
+        z-index: 1000000;
+        cursor: pointer;
+        text-align: center;
+        padding: 3px 0;
+        border-radius: 4px;
+        font: bold 15px Arial !important;
+        background:  #F39200 !important;
+        color: #3B3835 !important;
+        padding: 7px 20px 7px 20px;
+
+    }
+    
+    #componenteFirma #contenedor_titulo{ 
+		display:none 
+	}
+    
+</style>
+<script type="text/javascript" id="User1st_Settings">
+
+	window['User1st'] = {
+		Web : {
+			settings : {
+				accessibilityBtn : {
+					useMyClass : 'accessibilityClass'
+				}
+			}
+		}
+	};
+</script>
+
+
+<script type="text/javascript" id="User1st_Loader" src="https://fe.user1st.info/Loader/head"></script>
+
+<!-- GobMx -->
+<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+<script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/modernizr.js"></script><script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/pace.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700&amp;subset=latin" media="all"><script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/analitycs.js"></script></head>
+
+<!-- PARCHE PARA QUE EN LA PAGINA DE LOGIN NO SE MUESTRE NADA EN LA BARRA DE NAVEGACION (encabezado.jsp) -->
+
+
+<body class="  pace-done"><header><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarMainCollapse"><span class="sr-only">Interruptor de Navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand-logo" href="https://www.gob.mx/"><img src="https://framework-gb.cdn.gob.mx/gobmx/img/logo_blanco.svg" alt="gobierno de mexico"></a></div><div class="collapse navbar-collapse" id="navbarMainCollapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://www.gob.mx/tramites">Trámites</a></li><li><a href="https://www.gob.mx/gobierno">Gobierno</a></li><li><a href="https://www.gob.mx/busqueda"><span class="sr-only">Búsqueda</span><i class="icon-search"></i></a></li></ul></div></div></nav></header><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+	<!-- Contenido -->
+	<main class="page">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-12">
+					<div class="row">
+						
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/gestionSolicitud-web/static/resources/js/delta/firma-digital/FirmaDigital.js"></script>
+
+<script type="text/javascript" src="/portal-web/static/resources/js/wizard/registroUsuario/solicitudUsuarioWizard.js;JSESSIONIDPORTAL=lCgIU87ONj1Gh1ncbnZCtegKTLnIZyu4EHwE8f4uNvxKY6ayrQMd!-388029384">
+</script>
+
+<script type="text/javascript" src="/portal-web/static/resources/js/delta/authenticate.js;JSESSIONIDPORTAL=lCgIU87ONj1Gh1ncbnZCtegKTLnIZyu4EHwE8f4uNvxKY6ayrQMd!-388029384">
+</script>
+
+<script type="text/javascript" src="/portal-web/static/resources/js/delta/portal.js;JSESSIONIDPORTAL=lCgIU87ONj1Gh1ncbnZCtegKTLnIZyu4EHwE8f4uNvxKY6ayrQMd!-388029384">
+</script>
+
+<script type="text/javascript" src="/gestionIndividuo-consulta-web/static/resources/js/wizard/fisica/registro-usuario/registroUsuarioWizard.js"></script>
+
+<script type="text/javascript" src="/gestionIndividuo-consulta-web/static/resources/js/wizard/fisica/renovacion-fiel/renovacionFielWizard.js"></script>
+
+
+
+<div class="col-sm-12">
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<div class="separadorseccion">
+				<h2>Acceso escritorio virtual</h2>
+			</div>
+		</div>
+		<div class="col-md-6  col-sm-12">
+			<div class="pull-right" style="padding: 20px 10px">
+				<img alt="" src="/delta/resources/imagenes/logoescri.png" width="120px">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 m-b-lg">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div style="margin-bottom: 10px" id="login">
+						<form id="formlogin" action="/portal-web/j_spring_security_check" method="get">
+							<input id="fisica.rfc" name="fisica.rfc" type="hidden" value="">
+							<button type="button" id="enviarForm" class="btn btn-primary btn-block" style="width:450px">
+								Ingresar
+							</button>
+						</form>
+					</div>
+			
+					<div id="registronuevousuario">
+						<form id="formRegistroUsuarioNuevo">
+							<button type="button" id="registrarUsuario" class="btn btn-default btn-block" style="width:450px">
+								Crear una cuenta
+							</button>
+						</form>
+					</div>
+					
+					<div id="divRenovacionFiel" style="height: 100%; font-size: 15px;">
+						Si ya te encuentras registrado y cambiaste tu e.firma o CURP
+						da <span id="renovacionFiel" class="btn-link">clic
+							aquí</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 m-b-lg">
+		</div>
+	</div>
+</div>
+
+<!-- Divs de soporte para abrir los dialogos de las aplicaciones utilitarias -->
+<div id="wizardRegistroUsuario"></div>
+<div id="wizardRenovacionFiel"></div>
+<!-- div para la forma de firma -->
+<div id="firmaDigitalComponent"></div>
+<div id="doctosRequeridosTramite"></div>
+
+
+<div id="dialog-mensajes" title="Mensaje del sistema">
+	<p>
+		<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span> <label id="mensajeDialogo">Para poder ingresar, debe estar
+			registrado como usuario</label>
+	</p>
+</div>
+
+
+<div id="dialog-mensajesInicioBienvenido" title="Mensaje del sistema">
+	<div class="container-fluid empty-state">
+		<div class="row m-b-lg">
+			<!-- Titulo -->
+			<div class="col-xs-12 titulo">
+				<h2 class="m-n">
+					¡ Bienvenido !
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Imagen -->
+			<div class="col-xs-12 imagen">
+				<i class="fa fa-group fa-2x"></i>
+			</div>
+		</div>
+		<div class="row m-t-lg">
+			<div class="col-xs-12 text-center">
+				Ahora podrás realizar trámites 100% digitales no presenciales.
+				<br>
+				<strong>
+					Por seguridad debes de esperar 30 minutos para poder ingresar.
+				</strong>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="dialog-mensajesInicio" title="Mensaje del sistema">
+	<p>
+		<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span> <label id="mensajeDialogoInicio"></label>
+	</p>
+</div>
+
+<div id="dialog-mensajes-opinion" title="Aviso">
+	<p>
+		 <label id="mensajeDialogoOpinion">
+				 
+			</label>
+	</p>
+</div>
+
+
+
+
+</div>
+
+<!--Script al final para que la pagina cargue mas rapido-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (self != top) {
+            top.location = self.location
+        }
+        
+    })
+</script>
+					</div>
+				</div>
+			</div>
+		
+	</main>
+	
+	<!-- GobMx -->
+	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+	
+	<script>
+	 	$gmx(document).ready(function() {  
+	 		/* 
+	 		 * Fix para que los dialogos creados con jQueryUI
+	 		 * no tengan conflictos con bootstrap
+	 		 */
+			$.fn.button.noConflict();
+		});
+	</script>
+	
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&amp;ns=1&amp;cb=208251181" async=""></script>
+<footer class="main-footer "><div class=""><div class="container"><div class="bottom-buffer-footer row"><div class="col-sm-3 logo-footer navbar-footer-logo"><img src="https://framework-gb.cdn.gob.mx/gobmx/img/logo_blanco.svg" href="/" alt="logo gobierno de méxico" class="logo_footer"></div> <div class="accordion  col-xs-12 col-sm-3">            <input id="toggle1" type="checkbox" class="accordion-toggle" name="toggle">            <label for="toggle1"> <h5>Enlaces</h5></label>            <section><div class="" style="padding-left: 0px;"><ul class="nav-list"><li><a href="https://data.buengobierno.gob.mx/databuengobierno" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Datos abiertos de la SABG</a></li><li><a href="http://www.ordenjuridico.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Marco Jurídico</a></li><li><a href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Plataforma Nacional de Transparencia</a></li><li><a href="https://transparencia.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Transparencia para el pueblo</a></li><li><a href="https://alertadores.buengobierno.gob.mx/" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Alerta</a></li></ul></div></section>      </div> <div class="accordion col-xs-12 col-sm-3">            <input id="toggle2" type="checkbox" class="accordion-toggle" name="toggle">            <label for="toggle2"> <h5>¿Qué es gob.mx?</h5></label>            <section><div class=""><p>Es el portal único de trámites, información y participación ciudadana. <a href="https://www.gob.mx/que-es-gobmx">Leer más</a></p><ul class="nav-list"><li><a href="https://datos.gob.mx" target="_blank">Portal de datos abiertos</a></li><li><a href="https://www.gob.mx/accesibilidad" target="_blank">Declaración de accesibilidad</a></li><li><a href="https://www.gob.mx/terminos" target="_blank">Términos y Condiciones</a></li></ul></div> </section>      </div><div class="title  col-xs-12 col-sm-3"><h5 class="link-a"><a class="footer" id="SIDEC" href="https://sidec.buengobierno.gob.mx/#!/" target="_blank" rel="sidec">Denuncia contra servidores públicos</a></h5>
+<span class="col-xs-5 col-sm-12 col-md-11 social-media">Síguenos en</span><ul class="col-xs-7 col-sm-12 col-md-11 list-inline social-media"><li><a data-v-6b1f797a="" id="Facebook" href="https://www.facebook.com/gobmexico" target="_blank" rel="noopener" title="enlace a facebook abre en una nueva ventana" class="sendEst share-info footer"><img alt="Facebook" src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png"></a></li><li style="margin-left: 2px; margin-right: 2px;"><a data-v-6b1f797a="" id="Twitter" href="https://twitter.com/GobiernoMX" target="_blank" rel="noopener" title="Enlace a twitter abre en una nueva ventana" class="sendEst share-info footer"><img alt="Twitter" src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png"></a></li><li style="margin-left: 2px; margin-right: 5px;"><a data-v-6b1f797a="" id="Instagram" href="https://www.instagram.com/gobmexico/" target="_blank" rel="noopener" title="Enlace a instagram abre en una nueva ventana" class="sendEst share-info footer"><img alt="Instagram" src="https://framework-gb.cdn.gob.mx/landing/img/instagram.png"></a></li><li style="margin-left: 2px; margin-right: 2px;"><a data-v-6b1f797a="" id="Youtube" href="https://www.youtube.com/@gobiernodemexico" target="_blank" rel="noopener" title="Enlace a youtube abre en una nueva ventana" class="sendEst share-info footer"><img alt="Youtube" src="https://framework-gb.cdn.gob.mx/landing/img/youtube.png"></a></li></ul> <ul class="list-inline">
+            <li>
+              <div class="logo-079">
+              <a href="tel:+079" target="_blank">                <img src=" https://framework-gb.cdn.gob.mx/gobmx/img/079.png" href="/" alt="logo 079" class="logo-079">
+</a>              </div>
+            </li>
+          </ul></div></div></div></div></footer></body></html>
