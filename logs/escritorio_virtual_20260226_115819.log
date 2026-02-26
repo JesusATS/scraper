@@ -1,0 +1,71 @@
+2026-02-26 11:58:19,514 [INFO] ============================================================
+2026-02-26 11:58:19,514 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-26 11:58:19,514 [INFO]   Modo: EXPLORACIÓN
+2026-02-26 11:58:19,514 [INFO] ============================================================
+2026-02-26 11:58:21,724 [INFO] Navegando al Escritorio Virtual...
+2026-02-26 11:58:24,813 [INFO] Haciendo clic en el botón 'Ingresar'...
+2026-02-26 11:58:24,864 [INFO] Esperando a que carguen los iframes del login...
+2026-02-26 11:58:27,885 [INFO] Se encontraron 2 iframes. Buscando el formulario de login...
+2026-02-26 11:58:27,924 [INFO] ¡Dentro del iframe de login correcto!
+2026-02-26 11:58:27,924 [INFO] Iniciando login con RFC: BADJ7612216XA
+2026-02-26 11:58:27,924 [INFO] Ruta CER detectada: /Users/jesusgallegosontiveros/Downloads/00001000000708327516.cer
+2026-02-26 11:58:28,015 [INFO] Inyectando archivo .cer...
+2026-02-26 11:58:28,029 [INFO] Inyectando archivo .key...
+2026-02-26 11:58:28,040 [INFO] Escribiendo contraseña...
+2026-02-26 11:58:30,098 [INFO] Validando e.firma...
+2026-02-26 11:58:30,177 [INFO] Esperando a que la página principal cargue después del login...
+2026-02-26 11:58:38,180 [INFO] ¡Login completado con éxito!
+2026-02-26 11:58:39,326 [INFO] HTML guardado en debug: debug_escritorio_virtual_inicio.html
+2026-02-26 11:58:39,326 [INFO] Ingresando al portal patrón...
+2026-02-26 11:58:42,471 [INFO] Expandiendo portlet patronal para cargar su contenido...
+2026-02-26 11:58:45,034 [INFO] Seleccionando registro patronal A8084992107...
+2026-02-26 11:58:51,695 [INFO] HTML guardado en debug: debug_portal_patron.html
+2026-02-26 11:58:51,699 [INFO] Portal patrón cargado: https://serviciosdigitales.imss.gob.mx/portal-web/portal/patron/ingresar/
+2026-02-26 11:58:51,699 [INFO] ============================================================
+2026-02-26 11:58:51,699 [INFO]   MODO EXPLORACIÓN: Escritorio Virtual IMSS
+2026-02-26 11:58:51,699 [INFO] ============================================================
+2026-02-26 11:58:51,699 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 11:58:51,709 [INFO] Portlets cargados.
+2026-02-26 11:58:54,730 [INFO] HTML guardado en debug: debug_portal_explorado.html
+2026-02-26 11:58:54,770 [INFO] Portlets encontrados: 8
+2026-02-26 11:58:54,770 [INFO] Explorando portlet: /portal-web/portlet/patrones/clasificacion/A8084992107
+2026-02-26 11:58:58,069 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_clasificacion_A8084992107.html
+2026-02-26 11:58:58,126 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:58:59,129 [INFO] Explorando portlet: /portal-web/portlet/patrones/clasificacion/detalle/A8084992107
+2026-02-26 11:59:02,758 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_clasificacion_detalle_A8084992107.html
+2026-02-26 11:59:02,775 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:03,779 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/registroPatronal/A8084992107
+2026-02-26 11:59:07,100 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_registroPatronal_A8084992107.html
+2026-02-26 11:59:07,132 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:08,135 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/registroPatronal/resumen/A8084992107
+2026-02-26 11:59:12,899 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_registroPatronal_resumen_A8084992107.html
+2026-02-26 11:59:12,924 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:13,929 [INFO] Explorando portlet: /gestionCobranza-web/portlet/edoadeudo/A8084992107
+2026-02-26 11:59:17,063 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_portlet_edoadeudo_A8084992107.html
+2026-02-26 11:59:17,093 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:18,096 [INFO] Explorando portlet: /gestionCobranza-web/portlet/edoadeudo/graficas/A8084992107
+2026-02-26 11:59:21,302 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_portlet_edoadeudo_graficas_A8084992107.html
+2026-02-26 11:59:21,318 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:22,323 [INFO] Explorando portlet: /gestionCorreccion-widget-web/widget/cobranza/tramites/A8084992107
+2026-02-26 11:59:25,745 [INFO] HTML guardado en debug: debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_A8084992107.html
+2026-02-26 11:59:25,783 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:26,788 [INFO] Explorando portlet: /gestionCorreccion-widget-web/widget/cobranza/tramites/portlet/A8084992107
+2026-02-26 11:59:29,972 [INFO] HTML guardado en debug: debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_portlet_A8084992107.html
+2026-02-26 11:59:29,989 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:59:30,994 [INFO] Revisando menú principal del portal...
+2026-02-26 11:59:31,794 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 11:59:57,237 [WARNING] Tiempo de espera agotado para portlets. Continuando de todas formas.
+2026-02-26 12:00:00,368 [INFO] Reporte guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_120000.txt
+2026-02-26 12:00:00,368 [INFO] HTMLs de portlets guardados en: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 12:00:00,368 [INFO] 
+2026-02-26 12:00:00,368 [INFO] Exploración completada.
+2026-02-26 12:00:00,368 [INFO]   Reporte  → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_120000.txt
+2026-02-26 12:00:00,368 [INFO]   HTMLs    → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 12:00:00,368 [INFO] 
+2026-02-26 12:00:00,368 [INFO] PRÓXIMOS PASOS:
+2026-02-26 12:00:00,368 [INFO]   1. Abre el reporte y los HTMLs de debug para identificar
+2026-02-26 12:00:00,368 [INFO]      qué portlet/sección tiene las incapacidades.
+2026-02-26 12:00:00,368 [INFO]   2. Copia esa URL en RUTA_INCAPACIDADES (arriba en este script).
+2026-02-26 12:00:00,368 [INFO]   3. Cambia MODO_EXPLORACION = False
+2026-02-26 12:00:00,368 [INFO]   4. Ejecuta de nuevo.
+2026-02-26 12:00:00,479 [INFO] Navegador cerrado.

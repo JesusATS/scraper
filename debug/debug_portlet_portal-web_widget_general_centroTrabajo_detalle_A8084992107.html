@@ -1,0 +1,147 @@
+<html><head><script type="text/javascript">
+var infoCentroTrabajo = '<p>En esta secci&oacute;n se muestra la <span style="font-style: italic;">informaci&oacute;n general</span> del Centro de Trabajo de la siguiente forma:</p>' +
+	'<address>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><strong><span>N&uacute;mero de Registro Patronal</span></strong><br>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Nombre completo o Raz&oacute;n Social</span><br>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Nombre Comercial</span><br>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Tipo de Perona Fiscal</span><br>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>RFC</span><br>' +
+	'<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>CURP (Solo si es persona f&iacute;sica)</span><br>' +
+	'</address>';
+$('#idPopoverDatosCentroTrabajo').popover({
+	animation : true,
+	html: true,
+	title : "Datos Generales del Centro de Trabajo",
+	content : infoCentroTrabajo,
+	trigger: 'hover',
+	container : 'body'
+});
+
+var infoDomicilioCT =  '<p>En esta secci&oacute;n se muestra el <span style="font-style: italic;">Domicilio</span> del Centro de Trabajo</p>';
+$('#idPopoverDomicilioCT').popover({
+	animation : true,
+	html: true,
+	title : "Domicilio del Centro de Trabajo",
+	content : infoDomicilioCT,
+	trigger: 'hover',
+	container : 'body'
+});
+
+var infoMediosCT = '<p>En esta secci&oacute;n se muestran los <span style="font-style: italic;">Medios de Contacto</span> del Centro de Trabajo, pueden estar registrado los siguientes: '+
+'<p>Correo Electr&oacute;nico<br />Tel&eacute;fono Fijo<br />Tel&eacute;fono M&oacute;vil</p>';
+$('#idPopoverMediosContactoCT').popover({
+	animation : true,
+	html: true,
+	title : "Medios de Contacto del Centro de Trabajo",
+	content : infoMediosCT,
+	trigger: 'hover',
+	container : 'body'
+});
+</script>
+
+</head><body><div class="widget-section">
+	<div style="float: right;">
+		<a class="btn btn-sm icono-help" id="idPopoverDatosCentroTrabajo" data-toggle="popover">
+		</a>
+	</div>
+	<address>
+		<strong> <span>A8084992107</span>
+		</strong><br>
+		
+			<span>JOAQUIN JOAQUIN
+				BALDERRAMA DAVILA</span>
+		
+		
+		<br> 
+		
+			
+			
+				<span>JOAQUIN JOAQUIN BALDERRAMA DAVILA</span>
+			
+		
+		<br> <span>FISICA</span><br>
+		
+			
+			
+				
+				
+					<span>BADJ7612216XA</span>
+				
+			
+			<br>
+			
+			<span>BADJ761221HCHLVQ04</span>
+			<br>
+		
+		
+	</address>
+</div>
+<br>
+<div class="widget-section">
+	<input type="hidden" id="hdnNumeroRegistroPatronal" value="A8084992107">
+	<input type="hidden" id="hdnEsRPC" value="0">
+	
+		
+			<div style="float: right;">
+				<a class="btn btn-sm icono-help" id="idPopoverDomicilioCT" data-toggle="popover">
+				</a>
+			</div>
+			<address>
+				
+					Calle (#)
+					: IGNACIO DE LA LLAVE
+					1419  ,
+					 4<br>
+					Colonia
+					: ZONA CENTRO<br>
+					Municipio
+					: CHIHUAHUA<br>
+					Entidad federativa
+					:
+					CHIHUAHUA<br>
+					C.P. 31000<br>
+				
+				
+				Delegación
+				: CHIHUAHUA<br>
+				Subdelegación
+				: CHIHUAHUA<br>
+				
+					Municipio IMSS: CHIHUAHUA (A80)<br>
+				
+			</address>
+		
+		
+	
+</div>
+<br>
+<div class="widget-section">
+	
+		
+			<div style="float: right;">
+				<a class="btn btn-sm icono-help" id="idPopoverMediosContactoCT" data-toggle="popover">
+				</a>
+			</div>
+			<div>
+				
+					<address>
+						<strong>TELÉFONO FIJO</strong> <br>
+						(614) 1197354<br>
+					</address>
+				
+					<address>
+						<strong>TELÉFONO FIJO</strong> <br>
+						<br>
+					</address>
+				
+					<address>
+						<strong>CORREO ELECTRÓNICO</strong> <br>
+						joakbd@hotmail.com<br>
+					</address>
+				
+			</div>
+		
+		
+	
+</div>
+</body></html>

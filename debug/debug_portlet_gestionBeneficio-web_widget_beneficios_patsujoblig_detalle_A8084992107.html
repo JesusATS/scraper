@@ -1,0 +1,39 @@
+<html><head><style>
+	address.beneficio {
+		border-bottom: 1px solid #C2C3C9;
+    	margin-bottom: 10px;
+	}
+	
+	address.beneficio:last-child {
+	    border-bottom: medium none;
+	    margin-bottom: 0;
+	}
+</style>
+
+<script type="text/javascript">
+	var infoDatosGeneralesFisicaFiscal = '<p>En esta secci&oacute;n se muestra el detalle de los beneficios con los que se cuenta:</p>'
+			+ '<address>'
+			+ '<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span><strong>Nombre del beneficio </strong></span><br>'
+			+ '<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Estado del beneficio</span><br>'
+			+ '<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Porcentaje de descuento</span><br>'
+			+ '<i class="icon-minus" style="margin-right: 3px; vertical-align: middle; line-height: 11px ! important; font-weight: lighter; font-size: 9px ! important;"></i><span>Periodo de vigencia del descuento</span><br>'
+			+ '</address>';
+
+	$('#idPopoverBeneficios').popover({
+		animation : true,
+		html : true,
+		content : infoDatosGeneralesFisicaFiscal,
+		trigger : 'hover',
+		container : 'body'
+	});
+</script>
+
+</head><body><div class="widget-section">
+	
+		
+		
+			No cuentas con los beneficios del Régimen de Incorporación Fiscal dentro del Instituto Mexicano del Seguro Social.
+		
+	
+</div>
+</body></html>

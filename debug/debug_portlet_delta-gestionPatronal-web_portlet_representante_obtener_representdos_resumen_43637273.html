@@ -1,0 +1,87 @@
+<html><head></head><body><div class="container-fluid empty-state">
+			<div class="row">
+				<!-- Imagen -->
+				<div class="col-xs-12 imagen">
+					<i class="glyphicon glyphicon-exclamation-sign"></i>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Titulo -->
+				<div class="col-xs-12 titulo">
+					Usted no cuenta con ninguna empresa representada.
+				</div>
+			</div>
+					
+			<!-- Opciones del empty state, si en el properties de opciones estan activas, aquï¿½ es donde se pondrï¿½n -->
+			<div id="opcNavEmptyStateRepresentados">
+				
+			</div>
+
+		</div>
+		
+	
+
+<form id="formRepresentado" action="#" method="post">
+	<input id="hdnIdRepresentado" type="hidden" value="" name="idPersona">
+	<input id="hdnRfc" type="hidden" value="" name="rfc">
+	<input id="hdnNombre" type="hidden" value="">
+	
+		
+		
+			<input id="hdnIdRepresentadoFM" type="hidden" value="" name="cveFisica">
+			<input id="hdnCurp" type="hidden" value="" name="curp">
+		
+	
+</form>
+
+<script id="initPortlet">
+	
+	$.post("/portal-web/utility/menu/opciones/7/2",null,function(data) {
+		$("#opcNavEmptyStateRepresentados").html(data);
+	});
+
+	$('#tblRepresentadosResumen').dataTable({
+		"bDestroy": true,
+		"bLengthChange": false,
+		"sPaginationType": "bootstrap",
+		"aoColumnDefs": [{"sSortDataType": "html", "sType": "html", "aTargets": [0]}]
+	});
+	
+	$('.representadoMoral').live( 'click' , function(){
+		$.blockUI();
+		var idPersona = $(this).attr('id');
+		var cvePersonaMoral  = $("#idPersonaFM"+idPersona).val(); 
+		var rfc = $("#"+idPersona).text();
+		var nombre = $.trim($("#nombre"+idPersona).text()).split('"').join('');
+		var curp = $("#curp"+idPersona).val();
+		
+		$('#hdnIdRepresentado').val(idPersona);
+		$('#hdnIdRepresentadoFM').val(cvePersonaMoral);
+		$('#hdnNombre').val(nombre);
+		$('#hdnNombre').attr('name','razonSocial');
+		$('#hdnRfc').val(rfc);
+		
+		document.getElementById('formRepresentado').action =  context_path + '/portal/persona/moral/ingresar/';
+		document.getElementById('formRepresentado').submit();
+	});
+
+	$('.representadoFisica').live( 'click' , function(){
+		$.blockUI();
+		var idPersona = $(this).attr('id');
+		var cveFisica  = $("#idPersonaFM"+idPersona).val(); 
+		var rfc = $("#"+idPersona).text();
+		var nombre = $.trim($("#nombre"+idPersona).text()).split('"').join('');
+		var curp = $("#curp"+idPersona).val();
+		
+		$('#hdnIdRepresentado').val(idPersona);
+		$('#hdnIdRepresentadoFM').val(cveFisica);
+		$('#hdnCurp').val(curp);
+		$('#hdnNombre').val(nombre);
+		$('#hdnNombre').attr('name','nombre');
+		$('#hdnRfc').val(rfc);
+		
+		document.getElementById('formRepresentado').action =  context_path + '/portal/persona/fisica/ingresar/';
+		document.getElementById('formRepresentado').submit();
+	});
+</script></body></html>

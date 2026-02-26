@@ -52,7 +52,7 @@ MODO_EXPLORACION = False
 # Una vez identificado el módulo correcto, cámbialo aquí y pon MODO_EXPLORACION = False
 # Opciones: afiliacion, emision, confronta, dapsua, ppe, satic,
 #           dictamen, irRTT, sipress, incidencias, dictamenOracle
-MODULO_INCAPACIDADES = "incidencias"  # ← confirmado correcto
+MODULO_INCAPACIDADES = "emision"  # ← confirmado correcto
 
 # Todos los módulos disponibles en el portal IDSE
 TODOS_LOS_MODULOS = {
@@ -509,7 +509,7 @@ def aplicar_filtros_busqueda(driver):
         except NoSuchElementException:
             continue
 
-    # Buscar y hacer clic en botón de búsqueda
+    # Buscar y hacer clic en botón de búsqueda pero no es 
     selectores_btn = [
         (By.XPATH, "//button[contains(text(),'Buscar') or contains(text(),'Consultar') or contains(text(),'buscar')]"),
         (By.XPATH, "//input[@type='button' and (contains(@value,'Buscar') or contains(@value,'Consultar'))]"),

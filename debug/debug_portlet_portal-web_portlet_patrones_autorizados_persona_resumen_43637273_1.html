@@ -1,0 +1,77 @@
+<html><head></head><body><div class="container-fluid empty-state">
+			<div class="row">
+				<!-- Imagen -->
+				<div class="col-xs-12 imagen">
+					<i class="glyphicon glyphicon-exclamation-sign"></i>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Titulo -->
+				<div class="col-xs-12 titulo">
+					No cuentas con registros patronales que te hayan autorizado para realizar trámites.
+				</div>
+			</div>
+		</div>
+		
+	
+
+
+
+<form id="formPatronAsociado" action="#" method="post">
+	<input id="hdnRegistroPatronal" type="hidden" value="" name="numeroRegistroPatronal">
+	<input id="hdnModalidadPatron" type="hidden" value="" name="modalidad.numModalidad">
+	
+	<input id="hdnIdEmpresaFisica" type="hidden" value="" name="fisica.idPersona">
+	<input id="hdnRFCEmpresaFisica" type="hidden" value="" name="fisica.rfc">
+	<input id="hdnIdFiscalEmpresaFisica" type="hidden" value="" name="fisica.cveFisica">
+	
+	<input id="hdnIdEmpresaMoral" type="hidden" value="" name="moral.idPersona"> 
+	<input id="hdnRFCEmpresaMoral" type="hidden" value="" name="moral.rfc">
+	<input id="hdnIdFiscalEmpresaMoral" type="hidden" value="" name="moral.cveMoral">
+</form>
+
+<form id="formPersonaSession" action="#" method="post">
+	<input id="hdnCveTipoPersona" type="hidden" value="1" name="cveTipoPersona">
+	<input id="hdnCveIdPersona" type="hidden" value="43637273" name="cveIdPersona">
+</form>
+
+<script id="initPortlet">
+	$('#tblPatronesAutorizados').dataTable({
+		"bDestroy": true,
+		"bLengthChange": false,
+		"sPaginationType": "bootstrap",
+		"aoColumnDefs": [{"sSortDataType": "html", "sType": "html", "aTargets": [0]}],
+		"bAutoWidth": false , 
+		"aoColumns" : [{ 'sWidth': '20%' },{ 'sWidth': '80%' }]
+	});
+
+	$('.patronAutorizado').live( 'click' , function(){
+		$.blockUI();
+		var numeroRegistroPatronal = $(this).attr('numeroRegistroPatronal');
+		var modalidadPatron = $(this).attr('modalidadPatron');
+
+		$('#hdnRegistroPatronal').val(numeroRegistroPatronal);
+		$('#hdnModalidadPatron').val(modalidadPatron);
+		
+		/* 
+		 * Se realiza esta validaciï¿½n para saber si estamos en el portal
+		 * empresa y poder mandar la informaciï¿½n necesaria de la 
+		 * empresa para mostrarlo en la barra de navegaciï¿½n
+		 */
+		if (portalContext == 2){
+			if ($('input#hdnCveTipoPersona').val() == 1) {
+				$('input#hdnIdEmpresaFisica').val($('input#hdnIdPersonaRepresentada').val());
+				$('input#hdnRFCEmpresaFisica').val($('input#hdnRfcPersonaRep').val());
+				$('input#hdnIdFiscalEmpresaFisica').val($('input#idPersonaFisicaMoral').val());
+			} else {
+				$('input#hdnIdEmpresaMoral').val($('input#hdnIdPersonaRepresentada').val());
+				$('input#hdnRFCEmpresaMoral').val($('input#hdnRfcPersonaRep').val());
+				$('input#hdnIdFiscalEmpresaMoral').val($('input#idPersonaFisicaMoral').val());
+			}
+		}
+		
+		document.getElementById('formPatronAsociado').action =  context_path + '/portal/patron/ingresar/';
+		document.getElementById('formPatronAsociado').submit();
+	});
+</script></body></html>

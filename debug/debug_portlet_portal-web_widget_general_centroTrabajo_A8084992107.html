@@ -1,0 +1,54 @@
+<html><head></head><body><input type="hidden" id="hdnTipoActualizacionCentroTrab" value="14">
+
+<script type="text/javascript" src="/portal-web/static/resources/js/widget/domiciliosCentroTrabajoWidget.js"></script>
+<script type="text/javascript" src="/portal-web/static/resources/js/portlet/indicadorRPC.js"></script>
+	
+<input type="hidden" id="context_p" value="/portal-web">
+<div class="contenedor" id="idCentroTrabajoWidget" widget-name="centroTrabajoWidget" widget-url="/portal-web/widget/general/centroTrabajo/detalle/A8084992107" widget-id-principal="A8084992107" widget-id-tercero="43637273">
+
+	<div class="encabezado"></div>
+	<div class="cuerpo">
+		<div class="titulo">
+			<div class="controles" style="display: inline-block;">
+				<a class="widget-tool widget-resize">
+					<i class="icono-abrir"></i>
+				</a>
+			</div>
+			<span> Datos generales del patrón
+			</span>
+		</div>
+		<div class="descripcion" style="display: none;">
+			<p>
+				Sección de datos generales del patrón asociado.
+			</p>
+		</div>
+		<div class="contenido" style="display: none;" already-loaded="false">
+			<div style="text-align: center; vertical-align: middle;">
+				<img alt="" src="/delta/resources/imagenes/loading.gif">
+			</div>
+		</div>
+
+		<div class="estado"></div>
+
+		<div class="pie">
+			<div class="opciones">
+				<div class="btn-group">
+					<a class="btn btn-default btn-sm" href="#">Acciones</a> <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+					<ul class="dropdown-menu" id="accionesWidgetPatronGeneral">
+					</ul>
+				</div>
+			</div>
+
+			<div class="controles">
+				<a class="widget-tool widget-refresh" style="display: none;"><i class="icono-refrescar"></i></a>
+				<a class="widget-tool widget-move handle"><i class="icono-mover"></i></a>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div id="dialogoMensajes">
+	<p><span id="textoMensaje"></span></p>
+</div>
+</body></html>

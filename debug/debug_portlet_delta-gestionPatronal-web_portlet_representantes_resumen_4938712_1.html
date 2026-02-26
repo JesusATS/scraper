@@ -1,0 +1,43 @@
+<html><head></head><body><div class="container-fluid empty-state">
+			<div class="row">
+				<!-- Imagen -->
+				<div class="col-xs-12 imagen">
+					<i class="glyphicon glyphicon-exclamation-sign"></i>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Titulo -->
+				<div class="col-xs-12 titulo">
+					Usted no cuenta con representantes legales.
+				</div>
+			</div>
+		</div>
+	
+
+
+
+<script id="initPortlet">
+
+	$('#tblRepresentantesResumen').dataTable({
+		"bDestroy": true,
+		"bLengthChange": false,
+		"sPaginationType": "bootstrap",
+		"aoColumnDefs": [
+			{ "fnRender": function ( oObj ) {				
+				return parseIndicador(oObj.aData[3]);
+			}, "aTargets": [ 3 ] },
+			{ "bSortable": false, "aTargets": [ 3 ] }
+			
+		]
+	});
+
+</script>
+	
+
+
+
+
+
+
+</body></html>

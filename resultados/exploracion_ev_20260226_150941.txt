@@ -1,0 +1,140 @@
+EXPLORACIÓN DEL ESCRITORIO VIRTUAL IMSS
+Fecha: 2026-02-26 15:07:54
+============================================================
+Keywords buscadas: incapacidad, subsidio, st-, días, dias, baja, médica, medica, enfermedad
+
+
+============================================================
+PORTLET: /portal-web/portlet/patrones/clasificacion/A8084992107
+  HTML: debug/debug_portlet_portal-web_portlet_patrones_clasificacion_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Clasificación Acciones
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/portal-web/portlet/patrones/clasificacion/A8084992107#
+
+============================================================
+PORTLET: /portal-web/portlet/patrones/clasificacion/detalle/A8084992107
+  HTML: debug/debug_portlet_portal-web_portlet_patrones_clasificacion_detalle_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Giro Clave Fracción División Grupo CONSULTARIO MEDICO 921 SERVICIOS SOCIALES Y COMUNALES SERVICIOS MÉDICOS, ASISTENCIA SOCIAL Y VETERINARIOS Descripción de la Fracción Clase Prima SRT SERVICIOS MÉDICOS COMPRENDE A LAS EMPRESAS QUE SE DEDICAN A PROPORCIONAR SERVICIOS MÉDICOS EN HOSPITALES, SANATORIOS, CLÍNICAS GENERALES, MATERNIDADES, CONSULTORIOS Y CLÍNICAS DENTALES, INCLUSO SERVICIOS DE OBSTETRIC
+
+============================================================
+PORTLET: /portal-web/portlet/solicitudes/registroPatronal/A8084992107
+  HTML: debug/debug_portlet_portal-web_portlet_solicitudes_registroPatronal_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Solicitudes
+
+============================================================
+PORTLET: /portal-web/portlet/solicitudes/registroPatronal/resumen/A8084992107
+  HTML: debug/debug_portlet_portal-web_portlet_solicitudes_registroPatronal_resumen_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Folio Tipo Trámites Estado Fecha de presentación Fecha presentación completa Clave estado 147282759154068383382 ALTA PATRONAL ALTA PATRONAL E INSCRIPCIÓN EN EL SEGURO DE RIESGOS DE TRABAJO SRT ATENDIDA 03/09/2016 11:02 2016-09-03 11:02:27.0 2 1541641903042234606680 IMPRESIÓN DE COMPROBANTE FISCAL IMPRESIÓN DE COMPROBANTE FISCAL CFDI ATENDIDA 07/11/2018 19:51 2018-11-07 19:51:42.0 2 174058504719213
+
+============================================================
+PORTLET: /gestionCobranza-web/portlet/edoadeudo/A8084992107
+  HTML: debug/debug_portlet_gestionCobranza-web_portlet_edoadeudo_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Estado de adeudo
+
+============================================================
+PORTLET: /gestionCobranza-web/portlet/edoadeudo/graficas/A8084992107
+  HTML: debug/debug_portlet_gestionCobranza-web_portlet_edoadeudo_graficas_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Créditos IMSS Créditos RCV
+
+============================================================
+PORTLET: /gestionCorreccion-widget-web/widget/cobranza/tramites/A8084992107
+  HTML: debug/debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Correcciones patronales
+
+============================================================
+PORTLET: /gestionCorreccion-widget-web/widget/cobranza/tramites/portlet/A8084992107
+  HTML: debug/debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_portlet_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Razón Social Trámite Fecha Registro Ref Notaria
+
+============================================================
+PORTLET: /portal-web/widget/general/centroTrabajo/A8084992107
+  HTML: debug/debug_portlet_portal-web_widget_general_centroTrabajo_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Datos generales del patrón Acciones
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/portal-web/widget/general/centroTrabajo/A8084992107#
+
+============================================================
+PORTLET: /portal-web/widget/general/centroTrabajo/detalle/A8084992107
+  HTML: debug/debug_portlet_portal-web_widget_general_centroTrabajo_detalle_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): A8084992107 JOAQUIN JOAQUIN BALDERRAMA DAVILA JOAQUIN JOAQUIN BALDERRAMA DAVILA FISICA BADJ7612216XA BADJ761221HCHLVQ04 Calle (#) : IGNACIO DE LA LLAVE 1419 , 4 Colonia : ZONA CENTRO Municipio : CHIHUAHUA Entidad federativa : CHIHUAHUA C.P. 31000 Delegación : CHIHUAHUA Subdelegación : CHIHUAHUA Municipio IMSS: CHIHUAHUA (A80) TELÉFONO FIJO (614) 1197354 TELÉFONO FIJO CORREO ELECTRÓNICO joakbd@hotm
+
+============================================================
+PORTLET: /gestionCobranza-web/widget/cobranza/A8084992107
+  HTML: debug/debug_portlet_gestionCobranza-web_widget_cobranza_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Estado de Adeudo Acciones
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/gestionCobranza-web/widget/cobranza/A8084992107#
+
+============================================================
+PORTLET: /gestionCobranza-web/widget/cobranza/resumen/A8084992107
+  HTML: debug/debug_portlet_gestionCobranza-web_widget_cobranza_resumen_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Total IMSS: No se encontraron datos Total RCV: No se encontraron datos
+
+============================================================
+PORTLET: /gestionCorreccion-widget-web/widget/cobranza/resumen/A8084992107
+  HTML: debug/debug_portlet_gestionCorreccion-widget-web_widget_cobranza_resumen_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Corrección patronal. Acciones Ingresar a la corrección patronal
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/gestionCorreccion-widget-web/widget/cobranza/resumen/A8084992107#
+  ENLACE: [Ingresar a la corrección patronal] → (sin destino)
+
+============================================================
+PORTLET: /gestionBeneficio-web/widget/beneficios/patsujoblig/A8084992107
+  HTML: debug/debug_portlet_gestionBeneficio-web_widget_beneficios_patsujoblig_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Beneficios Acciones
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/gestionBeneficio-web/widget/beneficios/patsujoblig/A8084992107#
+
+============================================================
+PORTLET: /gestionBeneficio-web/widget/beneficios/patsujoblig/detalle/A8084992107
+  HTML: debug/debug_portlet_gestionBeneficio-web_widget_beneficios_patsujoblig_detalle_A8084992107.html
+  Keywords encontradas: ninguna
+  Texto (resumen): No cuentas con los beneficios del Régimen de Incorporación Fiscal dentro del Instituto Mexicano del Seguro Social.
+
+============================================================
+PORTLET: /gestionCobranza-web/widget/comprobanteFiscal/A8084992107/BADJ7612216XA
+  HTML: debug/debug_portlet_gestionCobranza-web_widget_comprobanteFiscal_A8084992107_BADJ7612216XA.html
+  Keywords encontradas: ninguna
+  Texto (resumen): Comprobantes Fiscales Acciones
+  ENLACE: [Acciones] → https://serviciosdigitales.imss.gob.mx/gestionCobranza-web/widget/comprobanteFiscal/A8084992107/BADJ7612216XA#
+
+============================================================
+PORTLET: /gestionCobranza-web/widget/comprobanteFiscal/resumen/A8084992107/BADJ7612216XA
+  HTML: debug/debug_portlet_gestionCobranza-web_widget_comprobanteFiscal_resumen_A8084992107_BADJ7612216XA.html
+  Keywords encontradas: ninguna
+  Texto (resumen): 
+
+============================================================
+ENLACES EN MENÚ PRINCIPAL:
+  [Trámites] → https://www.gob.mx/tramites
+  [Gobierno] → https://www.gob.mx/gobierno
+  [Búsqueda] → https://www.gob.mx/busqueda
+  [Accesibilidad] → 
+  [Datos abiertos de la SABG] → https://data.buengobierno.gob.mx/databuengobierno
+  [Marco Jurídico] → http://www.ordenjuridico.gob.mx/
+  [Plataforma Nacional de Transparencia] → https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+  [Transparencia para el pueblo] → https://transparencia.gob.mx/
+  [Alerta] → https://alertadores.buengobierno.gob.mx/
+  [Leer más] → https://www.gob.mx/que-es-gobmx
+  [Portal de datos abiertos] → https://datos.gob.mx/
+  [Declaración de accesibilidad] → https://www.gob.mx/accesibilidad
+  [Términos y Condiciones] → https://www.gob.mx/terminos
+  [Denuncia contra servidores públicos] → https://sidec.buengobierno.gob.mx/#!/
+
+============================================================
+PRÓXIMOS PASOS:
+1. Revisa los HTMLs en debug/ para ver el contenido de cada portlet
+2. Identifica qué portlet/sección contiene las incapacidades
+3. Copia la URL completa en RUTA_INCAPACIDADES al inicio del script
+4. Cambia MODO_EXPLORACION = False
+5. Ejecuta el script de nuevo
+============================================================

@@ -1,0 +1,84 @@
+2026-02-26 11:47:50,115 [INFO] ============================================================
+2026-02-26 11:47:50,115 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-26 11:47:50,115 [INFO]   Modo: EXPLORACIÓN
+2026-02-26 11:47:50,115 [INFO] ============================================================
+2026-02-26 11:47:53,253 [INFO] Navegando al Escritorio Virtual...
+2026-02-26 11:47:56,407 [INFO] Haciendo clic en el botón 'Ingresar'...
+2026-02-26 11:47:56,457 [INFO] Esperando a que carguen los iframes del login...
+2026-02-26 11:47:59,477 [INFO] Se encontraron 2 iframes. Buscando el formulario de login...
+2026-02-26 11:47:59,515 [INFO] ¡Dentro del iframe de login correcto!
+2026-02-26 11:47:59,515 [INFO] Iniciando login con RFC: BADJ7612216XA
+2026-02-26 11:47:59,515 [INFO] Ruta CER detectada: /Users/jesusgallegosontiveros/Downloads/00001000000708327516.cer
+2026-02-26 11:47:59,593 [INFO] Inyectando archivo .cer...
+2026-02-26 11:47:59,608 [INFO] Inyectando archivo .key...
+2026-02-26 11:47:59,617 [INFO] Escribiendo contraseña...
+2026-02-26 11:48:01,649 [INFO] Validando e.firma...
+2026-02-26 11:48:01,727 [INFO] Esperando a que la página principal cargue después del login...
+2026-02-26 11:48:09,732 [INFO] ¡Login completado con éxito!
+2026-02-26 11:48:12,244 [INFO] HTML guardado en debug: debug_escritorio_virtual_inicio.html
+2026-02-26 11:48:12,244 [INFO] Buscando registro patronal A8084992107 en los portlets...
+2026-02-26 11:48:12,244 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 11:48:12,255 [INFO] Portlets cargados.
+2026-02-26 11:48:35,636 [ERROR] No se encontró el enlace del registro patronal. Revisa debug_escritorio_virtual_inicio.html y verifica REGISTRO_PATRONAL.
+2026-02-26 11:48:35,653 [INFO] HTML guardado en debug: debug_error_portal_patron.html
+2026-02-26 11:48:35,653 [WARNING] No se pudo ingresar al portal patrón. Continuando en portal persona.
+2026-02-26 11:48:35,653 [INFO] ============================================================
+2026-02-26 11:48:35,653 [INFO]   MODO EXPLORACIÓN: Escritorio Virtual IMSS
+2026-02-26 11:48:35,653 [INFO] ============================================================
+2026-02-26 11:48:35,653 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 11:48:35,661 [INFO] Portlets cargados.
+2026-02-26 11:48:38,682 [INFO] HTML guardado en debug: debug_portal_explorado.html
+2026-02-26 11:48:38,728 [INFO] Portlets encontrados: 12
+2026-02-26 11:48:38,728 [INFO] Explorando portlet: /portal-web/portlet/patrones/asociados/persona/43637273/1
+2026-02-26 11:48:42,178 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_asociados_persona_43637273_1.html
+2026-02-26 11:48:42,230 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:48:43,235 [INFO] Explorando portlet: /portal-web/portlet/patrones/asociados/persona/resumen/43637273/1
+2026-02-26 11:48:47,123 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_asociados_persona_resumen_43637273_1.html
+2026-02-26 11:48:47,153 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:48:48,156 [INFO] Explorando portlet: /delta-gestionPatronal-web/portlet/representantes/4938712/1
+2026-02-26 11:48:51,420 [INFO] HTML guardado en debug: debug_portlet_delta-gestionPatronal-web_portlet_representantes_4938712_1.html
+2026-02-26 11:48:51,470 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:48:52,471 [INFO] Explorando portlet: /delta-gestionPatronal-web/portlet/representantes/resumen/4938712/1
+2026-02-26 11:48:55,634 [INFO] HTML guardado en debug: debug_portlet_delta-gestionPatronal-web_portlet_representantes_resumen_4938712_1.html
+2026-02-26 11:48:55,651 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:48:56,652 [INFO] Explorando portlet: /delta-gestionPatronal-web/portlet/representante/obtener/representdos/43637273
+2026-02-26 11:49:00,366 [INFO] HTML guardado en debug: debug_portlet_delta-gestionPatronal-web_portlet_representante_obtener_representdos_43637273.html
+2026-02-26 11:49:00,382 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:01,386 [INFO] Explorando portlet: /delta-gestionPatronal-web/portlet/representante/obtener/representdos/resumen/43637273
+2026-02-26 11:49:04,679 [INFO] HTML guardado en debug: debug_portlet_delta-gestionPatronal-web_portlet_representante_obtener_representdos_resumen_43637273.html
+2026-02-26 11:49:04,697 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:05,702 [INFO] Explorando portlet: /portal-web/portlet/patrones/autorizados/persona/43637273/1
+2026-02-26 11:49:08,902 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_autorizados_persona_43637273_1.html
+2026-02-26 11:49:08,932 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:09,937 [INFO] Explorando portlet: /portal-web/portlet/patrones/autorizados/persona/resumen/43637273/1
+2026-02-26 11:49:13,166 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_autorizados_persona_resumen_43637273_1.html
+2026-02-26 11:49:13,185 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:14,186 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/43637273/1
+2026-02-26 11:49:17,605 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_43637273_1.html
+2026-02-26 11:49:17,643 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:18,645 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/resumen/43637273/1
+2026-02-26 11:49:22,545 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_resumen_43637273_1.html
+2026-02-26 11:49:22,588 [INFO]   Sin keywords de incapacidades.
+2026-02-26 11:49:23,589 [INFO] Explorando portlet: /gestionSeguroVoluntario-web/portlet/seguroDomestico/43637273
+2026-02-26 11:49:26,846 [INFO] HTML guardado en debug: debug_portlet_gestionSeguroVoluntario-web_portlet_seguroDomestico_43637273.html
+2026-02-26 11:49:26,895 [INFO]   *** CANDIDATO: keywords=['baja']
+2026-02-26 11:49:27,897 [INFO] Explorando portlet: /gestionSeguroVoluntario-web/portlet/seguroDomestico/content/43637273
+2026-02-26 11:49:31,112 [INFO] HTML guardado en debug: debug_portlet_gestionSeguroVoluntario-web_portlet_seguroDomestico_content_43637273.html
+2026-02-26 11:49:31,128 [INFO]   *** CANDIDATO: keywords=['baja']
+2026-02-26 11:49:32,133 [INFO] Revisando menú principal del portal...
+2026-02-26 11:49:32,473 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 11:49:57,904 [WARNING] Tiempo de espera agotado para portlets. Continuando de todas formas.
+2026-02-26 11:50:01,032 [INFO] Reporte guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_115001.txt
+2026-02-26 11:50:01,032 [INFO] HTMLs de portlets guardados en: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 11:50:01,032 [INFO] 
+2026-02-26 11:50:01,032 [INFO] Exploración completada.
+2026-02-26 11:50:01,032 [INFO]   Reporte  → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_115001.txt
+2026-02-26 11:50:01,032 [INFO]   HTMLs    → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 11:50:01,032 [INFO] 
+2026-02-26 11:50:01,032 [INFO] PRÓXIMOS PASOS:
+2026-02-26 11:50:01,032 [INFO]   1. Abre el reporte y los HTMLs de debug para identificar
+2026-02-26 11:50:01,032 [INFO]      qué portlet/sección tiene las incapacidades.
+2026-02-26 11:50:01,032 [INFO]   2. Copia esa URL en RUTA_INCAPACIDADES (arriba en este script).
+2026-02-26 11:50:01,032 [INFO]   3. Cambia MODO_EXPLORACION = False
+2026-02-26 11:50:01,032 [INFO]   4. Ejecuta de nuevo.
+2026-02-26 11:50:01,139 [INFO] Navegador cerrado.

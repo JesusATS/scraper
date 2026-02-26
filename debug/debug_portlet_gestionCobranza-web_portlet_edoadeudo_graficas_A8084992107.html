@@ -1,0 +1,67 @@
+<html><head></head><body><div id="titulos">
+		<div style="width:50%; box-sizing:border-box; float:left; text-align:center;">
+			<span style="color: black; font-size:medium;">Créditos IMSS</span>
+		</div>
+		
+		<div style="width:50%; box-sizing:border-box; float:right;text-align:center;">
+			<span style="color: black; font-size:medium;">Créditos RCV</span>
+		</div>
+	</div>
+	<div id="totales">
+		<div style="width:50%; box-sizing:border-box; float:left;text-align:center; color: black;">
+			<span id="totalesImss" style="color: black;  font-size:medium;"></span>
+		</div>
+		
+		<div style="width:50%; box-sizing:border-box; float:right;text-align:center; color: black;">
+			<span id="totalesRCV" style="color: black; font-size:medium;"></span>
+		</div>
+	</div>
+	<div id="graficas">
+		<div id="chartimss" style="height: 250px; width:50%; box-sizing:border-box; float:left; text-align: center; vertical-align: middle;">
+			<img alt="" src="/delta/resources/imagenes/loading.gif">
+		</div>
+			
+		<div id="chartrcv" style="height: 250px; width:50%; box-sizing:border-box; float:right; text-align: center; vertical-align: middle;">
+			<img alt="" src="/delta/resources/imagenes/loading.gif">
+		</div>
+	</div>
+		
+	<script id="initPortlet">
+		
+	$(document).ready(function(){
+		
+		var url = '/gestionCobranza-web/consulta/edoAdeudo/getTotales';
+		var rp = $("#nrp").val();	
+		$.postJSON(url,{'regPatronal': rp} , function(oData){
+			
+			if(oData.totalesImss != null) {
+				new Morris.Donut({
+					  // ID of the element in which to draw the chart.
+					  element: 'chartimss',
+					  // Chart data records -- each entry in this array corresponds to a point on
+					  // the chart.
+					  data: oData.totalesImss
+					});
+			} else {
+				$("#chartimss").hide();
+			}
+			
+			if(oData.totalesRCV != null) {
+				new Morris.Donut({
+					  // ID of the element in which to draw the chart.
+					  element: 'chartrcv',
+					  // Chart data records -- each entry in this array corresponds to a point on
+					  // the chart.
+					  data: oData.totalesRCV
+					});
+			} else {
+				$("#chartrcv").hide();
+			}
+			
+			$("#totalesImss").html(oData.totalImss);
+			$("#totalesRCV").html(oData.totalRcv);
+		});
+		
+		});
+	</script>
+</body></html>

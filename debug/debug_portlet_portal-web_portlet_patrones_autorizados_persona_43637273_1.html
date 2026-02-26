@@ -1,0 +1,55 @@
+<html><head></head><body><div class="contenedor" id="listaPatronesAutorizados" portlet-url="/portal-web/portlet/patrones/autorizados/persona/resumen/43637273/1" portlet-name="patronesAutorizadosPersona" portlet-id-principal="43637273" portlet-id-tercero="0">
+
+	<div class="encabezado"></div>
+	<div class="cuerpo">
+		<div class="titulo">
+			<span>Registros patronales asociados </span>
+
+			<div class="controles">
+				<a class="widget-tool widget-refresh" style="display: none;"><i class="icono-refrescar"></i></a> <a class="widget-tool widget-move handle"><i class="icono-mover"></i></a>
+				<a class="widget-tool widget-resize"> <i class="icono-abrir"></i>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="descripcion" style="display: none;">
+			<p>
+				Fuiste autorizado para realizar trámites por los siguientes registros patronales:
+			</p>
+		</div>
+
+		<div class="contenido" style="display: none;" already-loaded="false">
+			<div style="text-align: center; vertical-align: middle;">
+				<img alt="" src="/delta/resources/imagenes/loading.gif">
+			</div>
+			<br> <br>
+		</div>
+	</div>
+
+	<div class="estado"></div>
+
+	<div class="pie">
+		<div class="opciones">
+			<!--<div class="btn-group">
+				<a class="btn btn-primary btn-sm" href="#">Acciones </a> <a
+					class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"
+					href="#"><span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a id="registroAltaPatronal">Alta Patronal</a></li>
+				<li class="removable"><a id="registroAltaPatronalMoral">Alta Patronal P.M.</a></li>
+			
+				</ul>
+			</div>-->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var portalContext = $("#portalContext").val();
+	var mostrarOpcionAltaMoral = portalContext == 2
+	if (mostrarOpcionAltaMoral) {
+		$("li.removable").remove();
+	}
+</script>
+</body></html>

@@ -1,0 +1,98 @@
+2026-02-26 15:07:23,798 [INFO] ============================================================
+2026-02-26 15:07:23,798 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-26 15:07:23,798 [INFO]   Modo: EXPLORACIÓN
+2026-02-26 15:07:23,799 [INFO] ============================================================
+2026-02-26 15:07:26,504 [INFO] Navegando al Escritorio Virtual...
+2026-02-26 15:07:29,183 [INFO] Haciendo clic en el botón 'Ingresar'...
+2026-02-26 15:07:29,220 [INFO] Esperando a que carguen los iframes del login...
+2026-02-26 15:07:32,239 [INFO] Se encontraron 2 iframes. Buscando el formulario de login...
+2026-02-26 15:07:32,264 [INFO] ¡Dentro del iframe de login correcto!
+2026-02-26 15:07:32,264 [INFO] Iniciando login con RFC: BADJ7612216XA
+2026-02-26 15:07:32,264 [INFO] Ruta CER detectada: /Users/jesusgallegosontiveros/Downloads/00001000000708327516.cer
+2026-02-26 15:07:32,354 [INFO] Inyectando archivo .cer...
+2026-02-26 15:07:32,372 [INFO] Inyectando archivo .key...
+2026-02-26 15:07:32,385 [INFO] Escribiendo contraseña...
+2026-02-26 15:07:34,440 [INFO] Validando e.firma...
+2026-02-26 15:07:34,510 [INFO] Esperando a que la página principal cargue después del login...
+2026-02-26 15:07:42,515 [INFO] ¡Login completado con éxito!
+2026-02-26 15:07:42,534 [INFO] HTML guardado en debug: debug_escritorio_virtual_inicio.html
+2026-02-26 15:07:42,534 [INFO] Ingresando al portal patrón...
+2026-02-26 15:07:42,547 [INFO] Expandiendo portlet patronal para cargar su contenido...
+2026-02-26 15:07:45,076 [INFO] Seleccionando registro patronal A8084992107...
+2026-02-26 15:07:51,078 [INFO] HTML guardado en debug: debug_portal_patron.html
+2026-02-26 15:07:51,080 [INFO] Portal patrón cargado: https://serviciosdigitales.imss.gob.mx/portal-web/portal/patron/ingresar/
+2026-02-26 15:07:51,080 [INFO] ============================================================
+2026-02-26 15:07:51,080 [INFO]   MODO EXPLORACIÓN: Escritorio Virtual IMSS
+2026-02-26 15:07:51,080 [INFO] ============================================================
+2026-02-26 15:07:51,080 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 15:07:51,087 [INFO] Portlets cargados.
+2026-02-26 15:07:54,108 [INFO] HTML guardado en debug: debug_portal_explorado.html
+2026-02-26 15:07:54,177 [INFO] Portlets encontrados: 17
+2026-02-26 15:07:54,178 [INFO] Explorando portlet: /portal-web/portlet/patrones/clasificacion/A8084992107
+2026-02-26 15:07:57,747 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_clasificacion_A8084992107.html
+2026-02-26 15:07:57,796 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:07:58,801 [INFO] Explorando portlet: /portal-web/portlet/patrones/clasificacion/detalle/A8084992107
+2026-02-26 15:08:02,534 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_patrones_clasificacion_detalle_A8084992107.html
+2026-02-26 15:08:02,549 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:03,555 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/registroPatronal/A8084992107
+2026-02-26 15:08:06,773 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_registroPatronal_A8084992107.html
+2026-02-26 15:08:06,843 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:07,848 [INFO] Explorando portlet: /portal-web/portlet/solicitudes/registroPatronal/resumen/A8084992107
+2026-02-26 15:08:11,969 [INFO] HTML guardado en debug: debug_portlet_portal-web_portlet_solicitudes_registroPatronal_resumen_A8084992107.html
+2026-02-26 15:08:11,987 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:12,992 [INFO] Explorando portlet: /gestionCobranza-web/portlet/edoadeudo/A8084992107
+2026-02-26 15:08:16,479 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_portlet_edoadeudo_A8084992107.html
+2026-02-26 15:08:16,511 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:17,516 [INFO] Explorando portlet: /gestionCobranza-web/portlet/edoadeudo/graficas/A8084992107
+2026-02-26 15:08:20,639 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_portlet_edoadeudo_graficas_A8084992107.html
+2026-02-26 15:08:20,654 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:21,658 [INFO] Explorando portlet: /gestionCorreccion-widget-web/widget/cobranza/tramites/A8084992107
+2026-02-26 15:08:25,232 [INFO] HTML guardado en debug: debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_A8084992107.html
+2026-02-26 15:08:25,267 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:26,272 [INFO] Explorando portlet: /gestionCorreccion-widget-web/widget/cobranza/tramites/portlet/A8084992107
+2026-02-26 15:08:29,474 [INFO] HTML guardado en debug: debug_portlet_gestionCorreccion-widget-web_widget_cobranza_tramites_portlet_A8084992107.html
+2026-02-26 15:08:29,486 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:30,489 [INFO] Explorando portlet: /portal-web/widget/general/centroTrabajo/A8084992107
+2026-02-26 15:08:33,702 [INFO] HTML guardado en debug: debug_portlet_portal-web_widget_general_centroTrabajo_A8084992107.html
+2026-02-26 15:08:33,746 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:34,754 [INFO] Explorando portlet: /portal-web/widget/general/centroTrabajo/detalle/A8084992107
+2026-02-26 15:08:38,397 [INFO] HTML guardado en debug: debug_portlet_portal-web_widget_general_centroTrabajo_detalle_A8084992107.html
+2026-02-26 15:08:38,457 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:39,458 [INFO] Explorando portlet: /gestionCobranza-web/widget/cobranza/A8084992107
+2026-02-26 15:08:43,450 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_widget_cobranza_A8084992107.html
+2026-02-26 15:08:43,492 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:44,497 [INFO] Explorando portlet: /gestionCobranza-web/widget/cobranza/resumen/A8084992107
+2026-02-26 15:08:47,964 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_widget_cobranza_resumen_A8084992107.html
+2026-02-26 15:08:47,978 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:48,981 [INFO] Explorando portlet: /gestionCorreccion-widget-web/widget/cobranza/resumen/A8084992107
+2026-02-26 15:08:52,141 [INFO] HTML guardado en debug: debug_portlet_gestionCorreccion-widget-web_widget_cobranza_resumen_A8084992107.html
+2026-02-26 15:08:52,189 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:53,194 [INFO] Explorando portlet: /gestionBeneficio-web/widget/beneficios/patsujoblig/A8084992107
+2026-02-26 15:08:56,523 [INFO] HTML guardado en debug: debug_portlet_gestionBeneficio-web_widget_beneficios_patsujoblig_A8084992107.html
+2026-02-26 15:08:56,565 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:08:57,570 [INFO] Explorando portlet: /gestionBeneficio-web/widget/beneficios/patsujoblig/detalle/A8084992107
+2026-02-26 15:09:01,391 [INFO] HTML guardado en debug: debug_portlet_gestionBeneficio-web_widget_beneficios_patsujoblig_detalle_A8084992107.html
+2026-02-26 15:09:01,408 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:09:02,413 [INFO] Explorando portlet: /gestionCobranza-web/widget/comprobanteFiscal/A8084992107/BADJ7612216XA
+2026-02-26 15:09:06,929 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_widget_comprobanteFiscal_A8084992107_BADJ7612216XA.html
+2026-02-26 15:09:06,978 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:09:07,979 [INFO] Explorando portlet: /gestionCobranza-web/widget/comprobanteFiscal/resumen/A8084992107/BADJ7612216XA
+2026-02-26 15:09:11,135 [INFO] HTML guardado en debug: debug_portlet_gestionCobranza-web_widget_comprobanteFiscal_resumen_A8084992107_BADJ7612216XA.html
+2026-02-26 15:09:11,144 [INFO]   Sin keywords de incapacidades.
+2026-02-26 15:09:12,146 [INFO] Revisando menú principal del portal...
+2026-02-26 15:09:12,847 [INFO] Esperando que los portlets carguen su contenido via AJAX...
+2026-02-26 15:09:38,294 [WARNING] Tiempo de espera agotado para portlets. Continuando de todas formas.
+2026-02-26 15:09:41,427 [INFO] Reporte guardado: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_150941.txt
+2026-02-26 15:09:41,427 [INFO] HTMLs de portlets guardados en: /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 15:09:41,427 [INFO] 
+2026-02-26 15:09:41,427 [INFO] Exploración completada.
+2026-02-26 15:09:41,427 [INFO]   Reporte  → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/resultados/exploracion_ev_20260226_150941.txt
+2026-02-26 15:09:41,427 [INFO]   HTMLs    → /Users/jesusgallegosontiveros/Documents/Proyectos/scraper/debug
+2026-02-26 15:09:41,427 [INFO] 
+2026-02-26 15:09:41,427 [INFO] PRÓXIMOS PASOS:
+2026-02-26 15:09:41,427 [INFO]   1. Abre el reporte y los HTMLs de debug para identificar
+2026-02-26 15:09:41,427 [INFO]      qué portlet/sección tiene las incapacidades.
+2026-02-26 15:09:41,427 [INFO]   2. Copia esa URL en RUTA_INCAPACIDADES (arriba en este script).
+2026-02-26 15:09:41,427 [INFO]   3. Cambia MODO_EXPLORACION = False
+2026-02-26 15:09:41,427 [INFO]   4. Ejecuta de nuevo.
+2026-02-26 15:09:41,681 [INFO] Navegador cerrado.
