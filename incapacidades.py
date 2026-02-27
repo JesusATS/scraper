@@ -190,8 +190,8 @@ def iniciar_sesion_escritorio_virtual(driver, config):
 # ===========================================================================
 # True  → explora todos los portlets y genera reporte. Úsalo primero para
 #         identificar qué sección contiene las incapacidades.
-# False → va directo a la URL definida en RUTA_INCAPACIDADES.
-MODO_EXPLORACION = True
+# False → va directo a la extraccion (ya configurado para Produccion).
+MODO_EXPLORACION = False
 
 # Una vez identificada la sección en el reporte, pon aquí la URL completa
 # y cambia MODO_EXPLORACION = False.
@@ -203,6 +203,9 @@ KEYWORDS_INCAP = ["incapacidad", "subsidio", "st-", "días", "dias", "baja", "m�
 # Registro patronal asociado a la cuenta. Se usa para ingresar al portal patrón
 # donde están los trámites de los trabajadores (incapacidades, movimientos, etc.)
 REGISTRO_PATRONAL = "A8084992107"
+
+# NSS del trabajador a consultar en el módulo de incapacidades
+NSS_BUSQUEDA = "33017829533"
 
 
 # ===========================================================================
@@ -227,11 +230,10 @@ def _esperar_portlets(driver, timeout=25):
 
 def ingresar_portal_patron(driver):
     """
-    Expande el portlet de registros patronales (carga diferida) y hace clic en el
-    registro patronal para entrar al portal empresa (portal patrón).
-    El portlet usa lazy-loading: el contenido sólo se inyecta al expandirlo.
+    Expande el portlet de registros patronales (carga diferida) y abre el menú
+    desplegable de Acciones del registro patronal (btn-primary dropdown-toggle).
     """
-    log.info("Ingresando al portal patrón...")
+    log.info("Abriendo menú de Acciones del registro patronal...")
     wait = WebDriverWait(driver, 30)
 
     try:
@@ -254,23 +256,39 @@ def ingresar_portal_patron(driver):
             ))
             time.sleep(2)
 
-        # 3. Hacer clic en el enlace del registro patronal
-        log.info(f"Seleccionando registro patronal {REGISTRO_PATRONAL}...")
-        enlace = wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, f"a.patronAsociado[numeroregistropatronal='{REGISTRO_PATRONAL}']")
-        ))
-        url_antes = driver.current_url
-        driver.execute_script("arguments[0].click();", enlace)
+        # 3. Abrir el dropdown de Acciones del registro patronal
+        log.info(f"Abriendo dropdown de Acciones para {REGISTRO_PATRONAL}...")
+        selectores_dropdown = [
+            # Botón dropdown en la misma fila que el Registro Patronal (por atributo o texto)
+            (By.XPATH, f"//*[@numeroregistropatronal='{REGISTRO_PATRONAL}']/ancestor::tr//button[contains(@class,'dropdown-toggle')]"),
+            (By.XPATH, f"//*[contains(text(),'{REGISTRO_PATRONAL}')]/ancestor::tr//button[contains(@class,'dropdown-toggle')]"),
+            (By.XPATH, f"//*[contains(text(),'{REGISTRO_PATRONAL}')]/ancestor::div[contains(@class,'row')]//button[contains(@class,'dropdown-toggle')]"),
+            # Respaldo: primer dropdown-toggle dentro del portlet patronal
+            (By.CSS_SELECTOR, "#listaPatronesAsociados .btn.btn-primary.btn-xs.dropdown-toggle"),
+            (By.CSS_SELECTOR, "#listaPatronesAsociados .dropdown-toggle"),
+        ]
 
-        # 4. Esperar a que el portal patrón cargue (la URL cambia tras el POST)
-        WebDriverWait(driver, 25).until(lambda d: d.current_url != url_antes)
-        time.sleep(5)
-        guardar_html(driver, "debug_portal_patron.html")
-        log.info(f"Portal patrón cargado: {driver.current_url}")
+        btn_dropdown = None
+        for by, sel in selectores_dropdown:
+            try:
+                btn_dropdown = driver.find_element(by, sel)
+                break
+            except NoSuchElementException:
+                continue
+
+        if not btn_dropdown:
+            raise TimeoutException("No se encontró el botón dropdown de Acciones.")
+
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn_dropdown)
+        time.sleep(1)
+        btn_dropdown.click()  # clic nativo para disparar el data-toggle de Bootstrap
+        log.info("Menú de Acciones desplegado.")
+        time.sleep(2)
+        guardar_html(driver, "debug_portal_patron_dropdown.html")
         return True
 
     except TimeoutException:
-        log.error("No se pudo ingresar al portal patrón. Revisa debug_error_portal_patron.html")
+        log.error("No se pudo abrir el menú de Acciones. Revisa debug_error_portal_patron.html")
         guardar_html(driver, "debug_error_portal_patron.html")
         return False
 
@@ -297,7 +315,6 @@ def explorar_portal(driver):
     ]
 
     # Recopilar portlets Y widgets desde la página actual
-    # El portal usa tanto portlet-url como widget-url para cargar contenido dinámico
     urls_raw = []
     for attr in ("portlet-url", "widget-url"):
         urls_raw += [
@@ -401,18 +418,79 @@ def explorar_portal(driver):
 
 def navegar_a_incapacidades(driver):
     """
-    Navega directamente a RUTA_INCAPACIDADES (definida arriba).
-    Debe configurarse después de ejecutar en MODO_EXPLORACION.
+    Hace clic en 'Consulta incapacidades - Rango de fechas' en el menú
+    desplegable ya abierto por ingresar_portal_patron.
     """
-    if not RUTA_INCAPACIDADES:
-        log.error("RUTA_INCAPACIDADES está vacía. Primero ejecuta en MODO_EXPLORACION=True.")
-        return False
+    log.info("Buscando la opción 'Consulta incapacidades - Rango de fechas' en el menú...")
+    wait = WebDriverWait(driver, 20)
 
-    log.info(f"Navegando a: {RUTA_INCAPACIDADES}")
-    driver.get(RUTA_INCAPACIDADES)
-    time.sleep(5)
-    guardar_html(driver, "debug_incapacidades_pagina.html")
-    return True
+    try:
+        # Primero aseguramos que el dropdown esté abierto
+        selectores_dropdown = [
+            (By.XPATH, f"//*[@numeroregistropatronal='{REGISTRO_PATRONAL}']/ancestor::tr//a[contains(@class,'dropdown-toggle')]"),
+            (By.XPATH, f"//*[contains(text(),'{REGISTRO_PATRONAL}')]/ancestor::tr//a[contains(@class,'dropdown-toggle')]"),
+            (By.CSS_SELECTOR, "#listaPatronesAsociados a.dropdown-toggle"),
+            (By.CSS_SELECTOR, "#listaPatronesAsociados .dropdown-toggle"),
+        ]
+        btn_dropdown = None
+        for by, sel in selectores_dropdown:
+            try:
+                btn_dropdown = driver.find_element(by, sel)
+                break
+            except NoSuchElementException:
+                continue
+
+        if btn_dropdown:
+            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn_dropdown)
+            time.sleep(0.5)
+            btn_dropdown.click()  # clic nativo para disparar el data-toggle de Bootstrap
+            log.info("Dropdown de Acciones abierto.")
+            time.sleep(1.5)
+
+        # Llamar la función JS directamente (más robusto que esperar visibilidad del item)
+        log.info("Invocando 'Consulta Incapacidades - NSS' vía JS...")
+        driver.execute_script(f"patronAsociadoPortlet.nss('{REGISTRO_PATRONAL}')")
+        log.info("¡Módulo de incapacidades por NSS invocado!")
+
+        log.info("Esperando a que abra el modal con el iframe de consulta NSS...")
+        time.sleep(8)
+
+        # El formulario carga dentro de un iframe (id="nmpsFrame") dentro de un modal jQueryUI
+        log.info("Cambiando al iframe 'nmpsFrame'...")
+        iframe = wait.until(EC.presence_of_element_located((By.ID, "nmpsFrame")))
+        driver.switch_to.frame(iframe)
+        log.info("Dentro del iframe. Esperando campo NSS...")
+
+        # Llenar campo NSS — click primero para activarlo, luego escribir
+        log.info(f"Ingresando NSS: {NSS_BUSQUEDA}...")
+        campo_nss = wait.until(EC.visibility_of_element_located((By.ID, "nssLabel")))
+        campo_nss.click()
+        campo_nss.clear()
+        campo_nss.send_keys(NSS_BUSQUEDA)
+
+        btn_buscar = wait.until(EC.element_to_be_clickable((By.ID, "consultar")))
+        driver.execute_script("arguments[0].click();", btn_buscar)
+        log.info("Búsqueda ejecutada.")
+
+        time.sleep(5)
+        guardar_html(driver, "debug_incapacidades_iframe.html")
+
+        # Exportar — submit del form (action="reporteExcelPorNSS", method="post")
+        log.info("Descargando reporte Excel (formDescarga)...")
+        driver.execute_script("document.getElementById('formDescarga').submit();")
+        log.info("Descarga iniciada.")
+        time.sleep(5)
+        # Nota: el driver queda dentro del iframe para que extraer_tabla funcione
+        return True
+
+    except TimeoutException:
+        log.error("No se encontró la opción 'Consulta incapacidades'. Revisa debug_error_nav_incapacidades.html")
+        guardar_html(driver, "debug_error_nav_incapacidades.html")
+        return False
+    except Exception as e:
+        log.error(f"Error inesperado durante la navegación: {e}")
+        guardar_html(driver, "debug_error_nav_incapacidades.html")
+        return False
 
 
 def aplicar_filtros(driver, dias_atras=365):
@@ -580,12 +658,12 @@ def main():
         # ────────────────────────────────────────────────────────────────────
 
         if not navegar_a_incapacidades(driver):
-            log.error("No se pudo navegar a incapacidades. Revisa RUTA_INCAPACIDADES.")
+            log.error("No se pudo navegar a incapacidades.")
             return
 
-        aplicar_filtros(driver)
-
+        # El driver queda dentro del iframe tras navegar_a_incapacidades
         registros = extraer_tabla(driver)
+        driver.switch_to.default_content()  # volver al contexto principal
         if not registros:
             log.warning(
                 "Sin datos. Revisa debug/debug_incapacidades_pagina.html — "

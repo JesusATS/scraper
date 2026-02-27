@@ -1,0 +1,49 @@
+2026-02-27 13:09:34,762 [INFO] ============================================================
+2026-02-27 13:09:34,762 [INFO]   IMSS Escritorio Virtual - Scraper de Incapacidades
+2026-02-27 13:09:34,762 [INFO]   Modo: EXTRACCIÓN
+2026-02-27 13:09:34,763 [INFO] ============================================================
+2026-02-27 13:09:36,854 [INFO] Navegando al Escritorio Virtual...
+2026-02-27 13:09:39,328 [INFO] Haciendo clic en el botón 'Ingresar'...
+2026-02-27 13:09:39,361 [INFO] Esperando a que carguen los iframes del login...
+2026-02-27 13:09:42,384 [INFO] Se encontraron 2 iframes. Buscando el formulario de login...
+2026-02-27 13:09:42,408 [INFO] ¡Dentro del iframe de login correcto!
+2026-02-27 13:09:42,408 [INFO] Iniciando login con RFC: BADJ7612216XA
+2026-02-27 13:09:42,408 [INFO] Ruta CER detectada: /Users/jesusgallegosontiveros/Downloads/00001000000708327516.cer
+2026-02-27 13:09:42,485 [INFO] Inyectando archivo .cer...
+2026-02-27 13:09:42,501 [INFO] Inyectando archivo .key...
+2026-02-27 13:09:42,512 [INFO] Escribiendo contraseña...
+2026-02-27 13:09:44,555 [INFO] Validando e.firma...
+2026-02-27 13:09:44,621 [INFO] Esperando a que la página principal cargue después del login...
+2026-02-27 13:09:52,621 [INFO] ¡Login completado con éxito!
+2026-02-27 13:09:52,638 [INFO] HTML guardado en debug: debug_escritorio_virtual_inicio.html
+2026-02-27 13:09:52,639 [INFO] Abriendo menú de Acciones del registro patronal...
+2026-02-27 13:10:22,676 [ERROR] No se pudo abrir el menú de Acciones. Revisa debug_error_portal_patron.html
+2026-02-27 13:10:22,689 [INFO] HTML guardado en debug: debug_error_portal_patron.html
+2026-02-27 13:10:22,689 [WARNING] No se pudo ingresar al portal patrón. Continuando en portal persona.
+2026-02-27 13:10:22,689 [INFO] Buscando la opción 'Consulta incapacidades - Rango de fechas' en el menú...
+2026-02-27 13:10:22,705 [INFO] Invocando 'Consulta Incapacidades - NSS' vía JS...
+2026-02-27 13:10:22,707 [ERROR] Error inesperado durante la navegación: Message: javascript error: patronAsociadoPortlet is not defined
+  (Session info: MicrosoftEdge=145.0.3800.70)
+Stacktrace:
+0   msedgedriver                        0x0000000100fe3c80 msedgedriver + 6028416
+1   msedgedriver                        0x0000000100fdb6f8 msedgedriver + 5994232
+2   msedgedriver                        0x0000000100a7131c msedgedriver + 316188
+3   msedgedriver                        0x0000000100a76f1c msedgedriver + 339740
+4   msedgedriver                        0x0000000100a79770 msedgedriver + 350064
+5   msedgedriver                        0x0000000100afca0c msedgedriver + 887308
+6   msedgedriver                        0x0000000100afbd30 msedgedriver + 884016
+7   msedgedriver                        0x0000000100ab15a0 msedgedriver + 578976
+8   msedgedriver                        0x0000000100f9e48c msedgedriver + 5743756
+9   msedgedriver                        0x0000000100fa2524 msedgedriver + 5760292
+10  msedgedriver                        0x0000000100f81dec msedgedriver + 5627372
+11  msedgedriver                        0x0000000100fa2d84 msedgedriver + 5762436
+12  msedgedriver                        0x0000000100f72e34 msedgedriver + 5566004
+13  msedgedriver                        0x0000000100fc8878 msedgedriver + 5916792
+14  msedgedriver                        0x0000000100fc899c msedgedriver + 5917084
+15  msedgedriver                        0x0000000100fdb2fc msedgedriver + 5993212
+16  libsystem_pthread.dylib             0x0000000183ae5c08 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000183ae0ba8 thread_start + 8
+
+2026-02-27 13:10:22,714 [INFO] HTML guardado en debug: debug_error_nav_incapacidades.html
+2026-02-27 13:10:22,714 [ERROR] No se pudo navegar a incapacidades.
+2026-02-27 13:10:22,915 [INFO] Navegador cerrado.
