@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# IDE / editors
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+
+# Secretos y credenciales — NUNCA committear
+config.ini
+.env
+.env.local
+.env.*.local
+*.cer
+*.key
+*.pfx
+*.p12
+*.pem
+
+# Selenium / drivers (binarios grandes, descarga manual)
+msedgedriver
+msedgedriver.exe
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
+
+# Outputs / artefactos generados en runtime
+logs/
+resultados/
+descargas_csv/
+debug/
+*.log

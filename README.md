@@ -22,20 +22,28 @@ pip install selenium openpyxl
 
 ## Configuración
 
-1. Edita el archivo `config.ini` con tus datos:
+> ⚠️ **Nunca committees `config.ini` ni archivos `.cer` / `.key`.** El `.gitignore` los bloquea por defecto.
+
+1. Copia la plantilla y rellena con tus datos:
+
+```bash
+cp config.example.ini config.ini
+```
+
+2. Abre `config.ini` y reemplaza los placeholders por tus rutas/credenciales reales:
 
 ```ini
 [IMSS_CREDENCIALES]
-RUTA_CER        = C:\Ruta\A\Tu\Certificado.cer
-RUTA_KEY        = C:\Ruta\A\Tu\Llave.key
-USUARIO         = XAXX010101000
+RUTA_CER         = /ruta/absoluta/a/tu/certificado.cer
+RUTA_KEY         = /ruta/absoluta/a/tu/llave.key
+USUARIO          = TU_RFC_AQUI
 CONTRASENA_SITIO = tu_contrasena_aqui
 ```
 
-2. Descarga el `msedgedriver` que corresponda a tu versión de Edge:
+3. Descarga el `msedgedriver` que corresponda a tu versión de Edge:
    - Revisa tu versión de Edge en `edge://settings/help`
    - Descarga el driver en: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-   - Coloca el archivo `msedgedriver` (o `msedgedriver.exe` en Windows) en la misma carpeta que el script
+   - Coloca el archivo `msedgedriver` (o `msedgedriver.exe` en Windows) en la misma carpeta que el script. El `.gitignore` lo bloquea — no se sube al repo.
 
 ---
 
