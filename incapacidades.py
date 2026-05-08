@@ -4,7 +4,6 @@ import logging
 import os
 import time
 from datetime import datetime, date, timedelta
-import configparser
 
 from selenium import webdriver
 from selenium.common.exceptions import (
@@ -17,6 +16,8 @@ from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+from credentials import ImssCredentials, load_imss_credentials
 
 # ===========================================================================
 # CONFIGURACIÓN Y DIRECTORIOS
@@ -45,14 +46,9 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 # UTILIDADES
 # ===========================================================================
-def cargar_config():
-    config_path = os.path.join(SCRIPT_DIR, "config.ini")
-    config = configparser.ConfigParser()
-    if not config.read(config_path, encoding="utf-8"):
-        raise FileNotFoundError(f"No se encontró config.ini en: {config_path}")
-    if "IMSS_CREDENCIALES" not in config:
-        raise KeyError("Falta la seccion [IMSS_CREDENCIALES] en config.ini")
-    return config
+def cargar_credenciales():
+    """Wrapper sobre credentials.load_imss_credentials() — fija SCRIPT_DIR."""
+    return load_imss_credentials(SCRIPT_DIR)
 
 def crear_driver():
     ruta_driver = os.path.join(SCRIPT_DIR, "msedgedriver")
@@ -84,13 +80,11 @@ def guardar_html(driver, nombre):
 # ===========================================================================
 # FASE 1 - LOGIN EN ESCRITORIO VIRTUAL
 # ===========================================================================
-def iniciar_sesion_escritorio_virtual(driver, config):
-    creds = config["IMSS_CREDENCIALES"]
-    
-    rfc = creds.get("RFC", creds.get("USUARIO", ""))
-    ruta_cer = creds["RUTA_CER"]
-    ruta_key = creds["RUTA_KEY"]
-    contrasena = creds["CONTRASENA_SITIO"]
+def iniciar_sesion_escritorio_virtual(driver, creds: ImssCredentials):
+    rfc = creds.rfc
+    ruta_cer = creds.ruta_cer
+    ruta_key = creds.ruta_key
+    contrasena = creds.contrasena
     
     wait = WebDriverWait(driver, 20)
     
@@ -622,9 +616,9 @@ def main():
     log.info("=" * 60)
 
     try:
-        config = cargar_config()
+        creds = cargar_credenciales()
     except Exception as e:
-        log.error(f"Error cargando la configuración: {e}")
+        log.error(f"Error cargando credenciales: {e}")
         return
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -632,7 +626,7 @@ def main():
     try:
         driver = crear_driver()
 
-        if not iniciar_sesion_escritorio_virtual(driver, config):
+        if not iniciar_sesion_escritorio_virtual(driver, creds):
             log.error("Login fallido. Revisa la carpeta 'debug' para ver en dónde se atascó.")
             return
 

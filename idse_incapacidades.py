@@ -25,7 +25,8 @@ from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import configparser
+
+from credentials import ImssCredentials, load_imss_credentials
 
 # ===========================================================================
 # CONFIGURACIÓN — EDITA AQUÍ
@@ -96,17 +97,9 @@ log = logging.getLogger(__name__)
 # UTILIDADES
 # ===========================================================================
 
-def cargar_config():
-    config_path = os.path.join(SCRIPT_DIR, "config.ini")
-    config = configparser.ConfigParser()
-    if not config.read(config_path, encoding="utf-8"):
-        raise FileNotFoundError("No se encontro config.ini en: {}".format(config_path))
-    if "IMSS_CREDENCIALES" not in config:
-        raise KeyError("Falta la seccion [IMSS_CREDENCIALES] en config.ini")
-    for k in ["RUTA_CER", "RUTA_KEY", "USUARIO", "CONTRASENA_SITIO"]:
-        if not config["IMSS_CREDENCIALES"].get(k, "").strip():
-            raise ValueError("Falta o esta vacio: {} en config.ini".format(k))
-    return config
+def cargar_credenciales():
+    """Wrapper sobre credentials.load_imss_credentials() — fija SCRIPT_DIR."""
+    return load_imss_credentials(SCRIPT_DIR)
 
 
 def crear_driver():
@@ -182,8 +175,7 @@ def cerrar_popups(driver):
         pass
 
 
-def iniciar_sesion(driver, config):
-    creds = config["IMSS_CREDENCIALES"]
+def iniciar_sesion(driver, creds: ImssCredentials):
     wait  = WebDriverWait(driver, TIMEOUT)
 
     log.info("Navegando al portal IDSE...")
@@ -196,23 +188,23 @@ def iniciar_sesion(driver, config):
         # send_keys() es el único método válido para inputs de tipo file.
         log.info("Enviando certificado (.cer)...")
         campo = wait.until(EC.presence_of_element_located((By.ID, "certificado")))
-        campo.send_keys(creds["RUTA_CER"])
+        campo.send_keys(creds.ruta_cer)
         time.sleep(PAUSA_CORTA)
 
         log.info("Enviando llave privada (.key)...")
         campo = wait.until(EC.presence_of_element_located((By.ID, "llave")))
-        campo.send_keys(creds["RUTA_KEY"])
+        campo.send_keys(creds.ruta_key)
         time.sleep(PAUSA_CORTA)
 
         log.info("Llenando usuario...")
         campo = wait.until(EC.element_to_be_clickable((By.ID, "idUsuario")))
         campo.clear()
-        campo.send_keys(creds["USUARIO"])
+        campo.send_keys(creds.usuario)
 
         log.info("Llenando contrasena...")
         campo = wait.until(EC.element_to_be_clickable((By.ID, "password")))
         campo.clear()
-        campo.send_keys(creds["CONTRASENA_SITIO"])
+        campo.send_keys(creds.contrasena)
 
         log.info("Esperando que el boton 'Iniciar sesion' se habilite...")
         try:
@@ -252,7 +244,10 @@ def iniciar_sesion(driver, config):
                 log.error("Error del portal: %s", err)
         except NoSuchElementException:
             pass
-        log.error("Login fallido. Verifica RUTA_CER, RUTA_KEY y CONTRASENA_SITIO en config.ini")
+        log.error(
+            "Login fallido. Verifica IMSS_RUTA_CER, IMSS_RUTA_KEY y IMSS_CONTRASENA "
+            "(en .env o variables de entorno; o los campos equivalentes en config.ini legacy)."
+        )
         guardar_html(driver, "debug_login_fallido.html")
         return False
     except NoSuchElementException:
@@ -649,9 +644,9 @@ def main():
     log.info("=" * 60)
 
     try:
-        config = cargar_config()
+        creds = cargar_credenciales()
     except Exception as e:
-        log.error("Error en config.ini: %s", e)
+        log.error("Error cargando credenciales: %s", e)
         return
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -660,7 +655,7 @@ def main():
     try:
         driver = crear_driver()
 
-        if not iniciar_sesion(driver, config):
+        if not iniciar_sesion(driver, creds):
             log.error("Login fallido.")
             return
 

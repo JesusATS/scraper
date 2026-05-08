@@ -13,37 +13,49 @@ Automatiza la consulta y descarga de incapacidades de empleados desde el portal 
 ### Instalar dependencias
 
 ```bash
-pip install selenium openpyxl
+pip install -r requirements.txt
 ```
-
-> **Nota:** `webdriver-manager` es opcional. Este proyecto usa el driver manual colocado en la carpeta del script.
 
 ---
 
 ## Configuración
 
-> ⚠️ **Nunca committees `config.ini` ni archivos `.cer` / `.key`.** El `.gitignore` los bloquea por defecto.
+> ⚠️ **Nunca committees archivos de credenciales** (`.env`, `config.ini`, `.cer`, `.key`). El `.gitignore` los bloquea por defecto.
 
-1. Copia la plantilla y rellena con tus datos:
+### Opción 1 — Variables de entorno (recomendado)
+
+Copia la plantilla y rellena con tus datos:
+
+```bash
+cp .env.example .env
+```
+
+Variables disponibles:
+
+| Variable          | Descripción                                                          |
+|-------------------|----------------------------------------------------------------------|
+| `IMSS_RUTA_CER`   | Ruta absoluta al certificado FIEL `.cer`                            |
+| `IMSS_RUTA_KEY`   | Ruta absoluta a la llave privada FIEL `.key`                        |
+| `IMSS_USUARIO`    | RFC del firmante (login del portal)                                 |
+| `IMSS_CONTRASENA` | Contraseña del portal                                                |
+| `IMSS_RFC`        | Opcional. RFC adicional para Escritorio Virtual cuando difiere de `IMSS_USUARIO`. |
+
+Las credenciales también pueden venir directamente del shell (sin `.env`); útil cuando un orquestador externo (p. ej. idse-ai) invoca el scraper.
+
+### Opción 2 — config.ini (legacy, deprecado)
+
+Aún soportado para transición. Genera deprecation warning en logs al ejecutar.
 
 ```bash
 cp config.example.ini config.ini
 ```
 
-2. Abre `config.ini` y reemplaza los placeholders por tus rutas/credenciales reales:
+### Driver de Edge
 
-```ini
-[IMSS_CREDENCIALES]
-RUTA_CER         = /ruta/absoluta/a/tu/certificado.cer
-RUTA_KEY         = /ruta/absoluta/a/tu/llave.key
-USUARIO          = TU_RFC_AQUI
-CONTRASENA_SITIO = tu_contrasena_aqui
-```
-
-3. Descarga el `msedgedriver` que corresponda a tu versión de Edge:
-   - Revisa tu versión de Edge en `edge://settings/help`
-   - Descarga el driver en: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-   - Coloca el archivo `msedgedriver` (o `msedgedriver.exe` en Windows) en la misma carpeta que el script. El `.gitignore` lo bloquea — no se sube al repo.
+Descarga el `msedgedriver` que corresponda a tu versión de Edge:
+- Revisa tu versión en `edge://settings/help`
+- Descarga: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+- Coloca el binario en la raíz del proyecto. El `.gitignore` lo bloquea — no se sube al repo.
 
 ---
 
@@ -71,7 +83,8 @@ python idse_incapacidades.py
 
 ### El login falla
 - Verifica que las rutas al `.cer` y `.key` sean absolutas y correctas
-- Asegúrate de que la contraseña en `config.ini` no tenga espacios al inicio/final
+- Asegúrate de que la contraseña no tenga espacios al inicio/final (en `.env` o `config.ini`)
+- Si usas `.env`, confirma que el archivo está en la raíz del proyecto y se cargó (revisa el log)
 - Revisa si el portal muestra un CAPTCHA (el script no puede resolverlos)
 
 ### No se encuentran incapacidades
@@ -89,11 +102,16 @@ python idse_incapacidades.py
 
 ```
 idse_scraper/
-├── idse_incapacidades.py   # Script principal
-├── config.ini              # Credenciales (NO subir a git)
-├── msedgedriver[.exe]      # Driver de Edge (descargar manualmente)
-├── resultados/             # Archivos de salida generados automáticamente
-└── logs/                   # Logs de ejecución
+├── idse_incapacidades.py   # Scraper IDSE
+├── incapacidades.py        # Scraper Escritorio Virtual
+├── credentials.py          # Helper de carga de credenciales (env > .env > config.ini)
+├── .env                    # Credenciales locales (gitignored, NO subir a git)
+├── .env.example            # Plantilla
+├── config.example.ini      # Plantilla legacy
+├── config.ini              # Legacy — gitignored, NO subir a git
+├── msedgedriver[.exe]      # Driver de Edge (descargar manualmente, gitignored)
+├── resultados/             # Salidas generadas (gitignored)
+└── logs/                   # Logs de ejecución (gitignored)
 ```
 
 ---
