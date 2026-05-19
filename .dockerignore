@@ -1,0 +1,38 @@
+# Build context mínimo — no copiar entorno local, secretos ni artefactos.
+.git/
+.gitignore
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secretos y credenciales — NUNCA en la imagen
+.env
+.env.*
+config.ini
+*.cer
+*.key
+*.pfx
+*.p12
+*.pem
+
+# Driver local (la imagen instala el suyo)
+msedgedriver
+msedgedriver.exe
+
+# Artefactos generados en runtime
+logs/
+debug/
+resultados/
+descargas_csv/
+
+# Scripts deprecados (fuera de scope)
+scraper/
+scraperie/
+scraper.py
+scraper_server.py
+
+# Misc local
+.DS_Store
+.claude/
+SETUP.md

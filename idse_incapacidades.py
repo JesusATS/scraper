@@ -103,14 +103,18 @@ def cargar_credenciales():
 
 
 def crear_driver():
-    ruta_driver = os.path.join(SCRIPT_DIR, "msedgedriver")
-    if os.name == "nt":
-        ruta_driver += ".exe"
+    # Ruta del driver: env SCRAPER_MSEDGEDRIVER_PATH (contenedor) con
+    # fallback al binario local en SCRIPT_DIR (comportamiento previo).
+    ruta_driver = os.environ.get("SCRAPER_MSEDGEDRIVER_PATH", "").strip()
+    if not ruta_driver:
+        ruta_driver = os.path.join(SCRIPT_DIR, "msedgedriver")
+        if os.name == "nt":
+            ruta_driver += ".exe"
     if not os.path.exists(ruta_driver):
         raise FileNotFoundError(
             "No se encontro msedgedriver en: {}\n"
             "Descargalo en: https://developer.microsoft.com/microsoft-edge/tools/webdriver/\n"
-            "Luego ejecuta: chmod +x msedgedriver && xattr -d com.apple.quarantine msedgedriver".format(SCRIPT_DIR)
+            "Luego ejecuta: chmod +x msedgedriver && xattr -d com.apple.quarantine msedgedriver".format(ruta_driver)
         )
     prefs = {
         "download.default_directory": OUTPUT_DIR,
@@ -121,11 +125,25 @@ def crear_driver():
     }
     options = EdgeOptions()
     options.add_experimental_option("prefs", prefs)
-    # Descomenta para ejecutar sin ventana:
-    # options.add_argument("--headless=new")
+    # Headless opt-in vía env (ejecución en contenedor / CI). Sin la env el
+    # comportamiento es idéntico al previo: ventana visible + maximizada.
+    headless = os.environ.get("SCRAPER_HEADLESS", "").strip().lower() in (
+        "1",
+        "true",
+        "yes",
+    )
+    if headless:
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--window-size=1920,1080")
     service = EdgeService(executable_path=ruta_driver)
     driver = webdriver.Edge(service=service, options=options)
-    driver.maximize_window()
+    if headless:
+        driver.set_window_size(1920, 1080)
+    else:
+        driver.maximize_window()
     return driver
 
 
