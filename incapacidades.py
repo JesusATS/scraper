@@ -609,17 +609,42 @@ def guardar_csv(registros, ruta):
 # ===========================================================================
 # MAIN
 # ===========================================================================
-def main():
+def main(creds=None, search_params=None):
+    """
+    Entry point del scraper Escritorio Virtual.
+
+    Args:
+        creds: ImssCredentials opcional (orquestador). None = carga de env.
+        search_params: SearchParams opcional. None = comportamiento previo
+                       (modo "historico"-like).
+
+    Returns:
+        Exit code (0 éxito, 1 falla scraping, 3 error configuración).
+    """
     log.info("=" * 60)
     log.info("  IMSS Escritorio Virtual - Scraper de Incapacidades")
     log.info(f"  Modo: {'EXPLORACIÓN' if MODO_EXPLORACION else 'EXTRACCIÓN'}")
+    if search_params is not None:
+        log.info(f"  Search mode: {search_params.mode}")
     log.info("=" * 60)
 
-    try:
-        creds = cargar_credenciales()
-    except Exception as e:
-        log.error(f"Error cargando credenciales: {e}")
-        return
+    if creds is None:
+        try:
+            creds = cargar_credenciales()
+        except Exception as e:
+            log.error(f"Error cargando credenciales: {e}")
+            return 3
+
+    # Log informativo si vienen filtros específicos — Fase B agregará la UI
+    # selectors específicos del portal EV. Hoy se aplica el flujo default.
+    if search_params is not None and search_params.mode != "historico":
+        log.warning(
+            "search_params.mode=%s recibido — IMPLEMENTACION PENDIENTE Fase B. "
+            "Selectores UI del Escritorio Virtual para filtros por NSS y rango "
+            "de fechas requieren validación contra el portal real "
+            "(dentro de mx-central-1, §14). Se continúa con flujo default.",
+            search_params.mode,
+        )
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     driver = None
@@ -628,55 +653,46 @@ def main():
 
         if not iniciar_sesion_escritorio_virtual(driver, creds):
             log.error("Login fallido. Revisa la carpeta 'debug' para ver en dónde se atascó.")
-            return
+            return 1
 
-        # Ingresar al portal patrón (donde están los trámites de trabajadores)
         if not ingresar_portal_patron(driver):
             log.warning("No se pudo ingresar al portal patrón. Continuando en portal persona.")
 
         # ── MODO EXPLORACIÓN ────────────────────────────────────────────────
         if MODO_EXPLORACION:
             ruta = explorar_portal(driver)
-            log.info("")
-            log.info("Exploración completada.")
-            log.info(f"  Reporte  → {ruta}")
-            log.info(f"  HTMLs    → {DEBUG_DIR}")
-            log.info("")
-            log.info("PRÓXIMOS PASOS:")
-            log.info("  1. Abre el reporte y los HTMLs de debug para identificar")
-            log.info("     qué portlet/sección tiene las incapacidades.")
-            log.info("  2. Copia esa URL en RUTA_INCAPACIDADES (arriba en este script).")
-            log.info("  3. Cambia MODO_EXPLORACION = False")
-            log.info("  4. Ejecuta de nuevo.")
-            return
+            log.info("Exploración completada. Reporte: %s", ruta)
+            return 0
         # ────────────────────────────────────────────────────────────────────
 
         if not navegar_a_incapacidades(driver):
             log.error("No se pudo navegar a incapacidades.")
-            return
+            return 1
 
-        # El driver queda dentro del iframe tras navegar_a_incapacidades
         registros = extraer_tabla(driver)
-        driver.switch_to.default_content()  # volver al contexto principal
+        driver.switch_to.default_content()
         if not registros:
             log.warning(
                 "Sin datos. Revisa debug/debug_incapacidades_pagina.html — "
                 "puede que se necesiten filtros específicos o navegar a una subsección."
             )
-            return
+            return 1
 
         ruta_csv = os.path.join(OUTPUT_DIR, f"incapacidades_ev_{timestamp}.csv")
         guardar_csv(registros, ruta_csv)
         log.info(f"Proceso completado. CSV → {ruta_csv}")
+        return 0
 
     except Exception as e:
         log.exception(f"Error inesperado: {e}")
         if driver:
             guardar_html(driver, f"debug_error_{timestamp}.html")
+        return 1
     finally:
         if driver:
             driver.quit()
             log.info("Navegador cerrado.")
 
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    _sys.exit(main() or 0)

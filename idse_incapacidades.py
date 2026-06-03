@@ -438,7 +438,9 @@ def _sesion_valida(driver):
 # FASE 2.5 — APLICAR FILTROS DE BÚSQUEDA (si los hay)
 # ===========================================================================
 
-def aplicar_filtros_busqueda(driver):
+def aplicar_filtros_busqueda(driver, fecha_inicio=None, fecha_fin=None):
+    """Llena filtros de fecha. fecha_inicio/fecha_fin opcionales en formato dd/mm/yyyy.
+    Si no vienen, default = último año (modo histórico)."""
     """
     Detecta y llena automáticamente formularios de búsqueda en el módulo.
     Busca campos de fecha y aplica un rango del último año por defecto.
@@ -471,12 +473,14 @@ def aplicar_filtros_busqueda(driver):
         log.info("No se detectaron filtros de fecha. Continuando sin filtros.")
         return
 
-    # Calcular rango: último año
+    # Si vienen fechas explícitas (modo date_range del orquestador), usarlas;
+    # si no, default histórico = último año (comportamiento previo).
+    # NOTA: las firmas locales sobreescriben fecha_ini/fecha_fin del kwargs.
     from datetime import date, timedelta
     hoy = date.today()
     hace_un_anio = hoy - timedelta(days=365)
-    fecha_ini = hace_un_anio.strftime("%d/%m/%Y")
-    fecha_fin = hoy.strftime("%d/%m/%Y")
+    fecha_ini = fecha_inicio if fecha_inicio else hace_un_anio.strftime("%d/%m/%Y")
+    fecha_fin = fecha_fin if fecha_fin else hoy.strftime("%d/%m/%Y")
 
     log.info("Aplicando filtro de fechas: %s al %s", fecha_ini, fecha_fin)
 
@@ -636,18 +640,35 @@ def guardar_csv(registros, ruta):
 # MAIN
 # ===========================================================================
 
-def main():
+def main(creds=None, search_params=None):
+    """
+    Entry point del scraper IDSE.
+
+    Args:
+        creds: ImssCredentials opcional. Si es None, se cargan de env / .env /
+               config.ini (modo CLI / backwards compat).
+        search_params: SearchParams opcional (de scraper_input). Si es None,
+                       comportamiento previo (modo "historico"-like).
+
+    Returns:
+        Exit code (0 éxito, 1 falla scraping, 3 error configuración).
+        El orquestador puede usar este código para detectar éxito.
+    """
     log.info("=" * 60)
     log.info("  IDSE IMSS — Scraper de Incapacidades")
     log.info("  Fecha: %s", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     log.info("  Modo: %s", "EXPLORACION" if MODO_EXPLORACION else "EXTRACCION")
+    if search_params is not None:
+        log.info("  Search mode: %s", search_params.mode)
     log.info("=" * 60)
 
-    try:
-        creds = cargar_credenciales()
-    except Exception as e:
-        log.error("Error cargando credenciales: %s", e)
-        return
+    # Credenciales: inyectadas (orquestador) o cargadas de env (CLI)
+    if creds is None:
+        try:
+            creds = cargar_credenciales()
+        except Exception as e:
+            log.error("Error cargando credenciales: %s", e)
+            return 3
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     driver = None
@@ -657,7 +678,7 @@ def main():
 
         if not iniciar_sesion(driver, creds):
             log.error("Login fallido.")
-            return
+            return 1
 
         # ── MODO EXPLORACIÓN ────────────────────────────────────────
         if MODO_EXPLORACION:
@@ -666,21 +687,15 @@ def main():
             log.info("Exploracion completada.")
             log.info("  Reporte → %s", ruta)
             log.info("  HTMLs   → %s", DEBUG_DIR)
-            log.info("")
-            log.info("  PROXIMOS PASOS:")
-            log.info("  1. Abre el reporte y encuentra el modulo de incapacidades")
-            log.info("  2. Cambia MODULO_INCAPACIDADES al inicio del script")
-            log.info("  3. Pon MODO_EXPLORACION = False")
-            log.info("  4. Vuelve a ejecutar")
-            return
+            return 0
         # ────────────────────────────────────────────────────────────
 
         if not navegar_a_modulo(driver):
             log.error("No se pudo acceder al modulo. Revisa MODULO_INCAPACIDADES.")
-            return
+            return 1
 
-        # Aplicar filtros de búsqueda si el módulo los tiene
-        aplicar_filtros_busqueda(driver)
+        # Aplicar filtros de búsqueda según el modo
+        aplicar_busqueda(driver, search_params)
 
         registros = extraer_todos_los_datos(driver)
 
@@ -689,21 +704,62 @@ def main():
                 "Sin datos. Revisa debug/debug_modulo_incapacidades.html — "
                 "puede que el modulo requiera aplicar filtros de fecha primero."
             )
-            return
+            return 1
 
         ruta_csv = os.path.join(OUTPUT_DIR, "incapacidades_{}.csv".format(timestamp))
         guardar_csv(registros, ruta_csv)
         log.info("Proceso completado. CSV → %s", ruta_csv)
+        return 0
 
     except Exception as e:
         log.exception("Error inesperado: %s", e)
         if driver:
             guardar_html(driver, "debug_error_{}.html".format(timestamp))
+        return 1
     finally:
         if driver:
             driver.quit()
             log.info("Navegador cerrado.")
 
 
+def aplicar_busqueda(driver, search_params):
+    """
+    Dispatcher de búsqueda según el modo solicitado por el orquestador.
+
+    Modos:
+      - "historico" o None: comportamiento previo (rango último año por default)
+      - "date_range": rango específico (fecha_inicio, fecha_fin)
+      - "nss": búsqueda por NSS — TODO Fase B: selectores UI específicos
+
+    Cada rama llama a aplicar_filtros_busqueda() con argumentos distintos.
+    """
+    if search_params is None or search_params.mode == "historico":
+        log.info("Modo: HISTORICO (rango default último año)")
+        aplicar_filtros_busqueda(driver)
+        return
+
+    if search_params.mode == "date_range":
+        fi = search_params.fecha_inicio.strftime("%d/%m/%Y")
+        ff = search_params.fecha_fin.strftime("%d/%m/%Y")
+        log.info("Modo: DATE_RANGE (%s al %s)", fi, ff)
+        aplicar_filtros_busqueda(driver, fecha_inicio=fi, fecha_fin=ff)
+        return
+
+    if search_params.mode == "nss":
+        log.warning(
+            "Modo: NSS=%s — IMPLEMENTACION PENDIENTE (Fase B). "
+            "El selector UI específico del portal IDSE para búsqueda por NSS "
+            "requiere validación contra el portal real dentro de mx-central-1. "
+            "Por ahora se aplican filtros default.",
+            search_params.nss,
+        )
+        # TODO Fase B: navegar al modulo correcto, llenar input de NSS,
+        # disparar búsqueda. Selectores XPath/CSS pendientes de identificar.
+        aplicar_filtros_busqueda(driver)
+        return
+
+
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+
+    _sys.exit(main() or 0)

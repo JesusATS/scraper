@@ -32,6 +32,22 @@ class ImssCredentials:
     contrasena: str
     rfc: str  # Default: == usuario. Algunos portales (EV) lo distinguen.
 
+    @classmethod
+    def from_input(cls, creds_input: object) -> "ImssCredentials":
+        """
+        Construye ImssCredentials desde un CredentialsInput de scraper_input.
+
+        Se usa cuando el orquestador (idse-ai) provee las credenciales vía
+        JSON en stdin. La validación de campos ya ocurrió en scraper_input.
+        """
+        return cls(
+            ruta_cer=creds_input.ruta_cer,  # type: ignore[attr-defined]
+            ruta_key=creds_input.ruta_key,  # type: ignore[attr-defined]
+            usuario=creds_input.usuario,    # type: ignore[attr-defined]
+            contrasena=creds_input.contrasena,  # type: ignore[attr-defined]
+            rfc=creds_input.rfc,            # type: ignore[attr-defined]
+        )
+
 
 _REQUIRED_ENV_KEYS = (
     "IMSS_RUTA_CER",
